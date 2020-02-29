@@ -53,3 +53,6 @@ TagManager:
   - name: Items
     uniqueID: 3866862007
     locked: 0
+  - name: Hero
+    uniqueID: 3438045497
+    locked: 0
