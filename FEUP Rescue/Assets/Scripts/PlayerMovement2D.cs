@@ -11,6 +11,7 @@ public class PlayerMovement2D : MonoBehaviour
     public float runSpeed = 40f;
     float horizontalMove = 0f;
     bool jump = false;
+    bool attack = false;
     bool crouch = false;
 
     // Start is called before the first frame update
@@ -23,6 +24,16 @@ public class PlayerMovement2D : MonoBehaviour
         {
             jump = true;
             animator.SetBool("isJumping", true);
+        }
+
+        if(Input.GetButtonDown("Attack"))
+        {
+            attack = true;
+            animator.SetBool("isAttacking", true);
+        }
+        else if(Input.GetButtonUp("Attack"))
+        {
+            attack = false;
         }
 
         // not using (no sprite) but just in case..
