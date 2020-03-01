@@ -6,6 +6,8 @@ public class PlayerMovement2D : MonoBehaviour
 {
     public HeroController2D controller;
 
+    public Animator animator;
+
     public float runSpeed = 40f;
     float horizontalMove = 0f;
     bool jump = false;
@@ -15,12 +17,15 @@ public class PlayerMovement2D : MonoBehaviour
     void Update()
     {
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+        animator.SetFloat("speed", Mathf.Abs(horizontalMove));
 
         if (Input.GetButtonDown("Jump"))
         {
             jump = true;
+            animator.SetBool("isJumping", true);
         }
 
+        // not using (no sprite) but just in case..
         if (Input.GetButtonDown("Crouch"))
         {
             crouch = true;
@@ -28,6 +33,11 @@ public class PlayerMovement2D : MonoBehaviour
         {
             crouch = false;
         }
+    }
+
+    public void OnLanding()
+    {
+        animator.SetBool("isJumping", false);
     }
 
     // Update is called once per frame
