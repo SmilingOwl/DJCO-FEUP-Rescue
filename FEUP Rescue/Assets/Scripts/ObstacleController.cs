@@ -9,7 +9,7 @@ public class ObstacleController : MonoBehaviour
     public static ObstacleController instance;
     public List<GameObject> activeObstacles;
     public Vector3 initialPosition = new Vector3(22f, -6f, 0f);
-    public float spaceBetween = 0f;
+    public float spaceBetween = 5f;
 
     void Awake() {
         instance = this;

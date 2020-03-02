@@ -533,6 +533,8 @@ GameObject:
   m_Component:
   - component: {fileID: 704229322}
   - component: {fileID: 704229323}
+  - component: {fileID: 704229324}
+  - component: {fileID: 704229325}
   m_Layer: 0
   m_Name: dustbin
   m_TagString: Untagged
@@ -604,6 +606,44 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &704229324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 704229321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46d273b9d6ba3964ba1d1ef6d767ba57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &704229325
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 704229321}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.08204818, y: -0.28723335}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5.12, y: 5.12}
+    newSize: {x: 5.12, y: 5.12}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 4.299496, y: 4.545533}
+  m_EdgeRadius: 0
 --- !u!1 &833593796
 GameObject:
   m_ObjectHideFlags: 0
@@ -732,6 +772,7 @@ GameObject:
   - component: {fileID: 1285501203}
   - component: {fileID: 1285501205}
   - component: {fileID: 1285501206}
+  - component: {fileID: 1285501207}
   m_Layer: 0
   m_Name: Obstacle Controller
   m_TagString: Untagged
@@ -782,7 +823,7 @@ MonoBehaviour:
   obstacleVelocity: 11
   activeObstacles: []
   initialPosition: {x: 22, y: -6, z: 0}
-  spaceBetween: 10
+  spaceBetween: 5
 --- !u!114 &1285501206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -796,6 +837,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeTraps: 0
+--- !u!114 &1285501207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1285501202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdd1bd45a6558bb4c9c58d9c8380aa09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeDustbins: 0
 --- !u!1 &1529314629
 GameObject:
   m_ObjectHideFlags: 0
@@ -1129,10 +1183,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   benchPool: []
   trapPool: []
+  dustbinPool: []
   bench: {fileID: 2142892198}
   trap: {fileID: 1727989985}
+  dustbin: {fileID: 704229321}
   benchAmount: 2
   trapAmount: 3
+  dustbinAmount: 3
 --- !u!4 &1916146999
 Transform:
   m_ObjectHideFlags: 0
