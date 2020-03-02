@@ -10,31 +10,34 @@ public class PlayerMovement2D : MonoBehaviour
 
     public float runSpeed = 40f;
     float horizontalMove = 0f;
+    
     bool jump = false;
-    bool attack = false;
     bool crouch = false;
+
+    public Transform attackPoint;
+    public float attackRange = 0.5f;
+    public LayerMask enemyLayers;
 
     // Start is called before the first frame update
     void Update()
     {
+        //RUN
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
         animator.SetFloat("speed", Mathf.Abs(horizontalMove));
 
+        //JUMP
         if (Input.GetButtonDown("Jump"))
         {
             jump = true;
             animator.SetBool("isJumping", true);
         }
 
-        if(Input.GetButtonDown("Attack"))
+        //ATTACK
+        if(Input.GetKeyDown(KeyCode.Space))
         {
-            attack = true;
-            animator.SetBool("isAttacking", true);
+            Attack();
         }
-        else if(Input.GetButtonUp("Attack"))
-        {
-            attack = false;
-        }
+        
 
         // not using (no sprite) but just in case..
         if (Input.GetButtonDown("Crouch"))
@@ -44,6 +47,29 @@ public class PlayerMovement2D : MonoBehaviour
         {
             crouch = false;
         }
+    }
+
+    public void Attack()
+    {
+        //plays animation
+        animator.SetTrigger("Attack");
+
+        //detects enemies in range
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+
+        //make damage
+
+        foreach(Collider2D enemy in hitEnemies)
+        {
+            Debug.Log("We hit" + enemy.name);
+        }
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        if (attackPoint == null)
+            return;
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
 
     public void OnLanding()
