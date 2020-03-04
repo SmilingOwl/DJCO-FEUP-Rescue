@@ -9,14 +9,17 @@ public class ObjectPool : MonoBehaviour
     public List<GameObject> pcPool;
     public List<GameObject> trapPool;
     public List<GameObject> dustbinPool;
+    public List<GameObject> applePool;
     public GameObject bench;
     public GameObject pc;
     public GameObject trap;
     public GameObject dustbin;
-    public int pcAmount = 5; 
+    public GameObject apple;
+    public int pcAmount = 6; 
     public int benchAmount = 2;
     public int trapAmount = 3;
     public int dustbinAmount = 3;
+    public int appleAmount = 1;
 
     void Awake() {
         instance = this;
@@ -26,7 +29,7 @@ public class ObjectPool : MonoBehaviour
     void Start()
     {
         benchPool = new List<GameObject>();
-        for(int i = 0; i < benchAmount || i < trapAmount || i < dustbinAmount || i < pcAmount; i++) {
+        for(int i = 0; i < benchAmount || i < trapAmount || i < dustbinAmount || i < pcAmount || i < appleAmount; i++) {
             if(i < benchAmount) {
                 GameObject obj = (GameObject) Instantiate(bench);
                 obj.SetActive(false); 
@@ -48,44 +51,32 @@ public class ObjectPool : MonoBehaviour
                 obj.SetActive(false);
                 pcPool.Add(obj);
             }
-
-        }
-    }
-
-    public GameObject GetBench() {
-        for (int i = 0; i < benchPool.Count; i++) {
-            if (!benchPool[i].activeInHierarchy) {
-                return benchPool[i];
-            }
-        }
-        return null;
-    }
-
-    public GameObject GetTrap() {
-        for (int i = 0; i < trapPool.Count; i++) {
-            if (!trapPool[i].activeInHierarchy) {
-                return trapPool[i];
-            }
-        }
-        return null;
-    }
-
-    public GameObject GetDustbin() {
-        for (int i = 0; i < dustbinPool.Count; i++) {
-            if (!dustbinPool[i].activeInHierarchy) {
-                return dustbinPool[i];
-            }
-        }
-        return null;
-    }
-
-    public GameObject GetPc()
-    {
-        for (int i = 0; i < pcPool.Count; i++)
-        {
-            if (!pcPool[i].activeInHierarchy)
+            if (i < appleAmount)
             {
-                return pcPool[i];
+                GameObject obj = (GameObject)Instantiate(apple);
+                obj.SetActive(false);
+                applePool.Add(obj);
+            }
+        }
+    }
+
+    public GameObject GetObject(string obj) {
+        List<GameObject> pool = new List<GameObject>();
+        if(obj == "bench") {
+            pool = benchPool;
+        } else if(obj == "trap") {
+            pool = trapPool;
+        } else if(obj == "dustbin") {
+            pool = dustbinPool;
+        } else if(obj == "pc") {
+            pool = pcPool;
+        } else if(obj == "apple") {
+            pool = applePool;
+        }
+
+        for (int i = 0; i < pool.Count; i++) {
+            if (!pool[i].activeInHierarchy) {
+                return pool[i];
             }
         }
         return null;

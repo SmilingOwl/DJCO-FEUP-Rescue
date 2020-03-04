@@ -22,7 +22,7 @@ public class BenchInstantiator : MonoBehaviour
     }
     
     void AddBench() {
-        GameObject bench = ObjectPool.instance.GetBench();
+        GameObject bench = ObjectPool.instance.GetObject("bench");
         if (bench != null) {
             if(ObstacleController.instance.AddObstacle(bench)){
                 activeBenches++;

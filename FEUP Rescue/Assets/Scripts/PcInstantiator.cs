@@ -25,7 +25,7 @@ public class PcInstantiator : MonoBehaviour
 
     void AddPc()
     {
-        GameObject pc = ObjectPool.instance.GetPc();
+        GameObject pc = ObjectPool.instance.GetObject("pc");
         if (pc != null)
         {
             if (ObstacleController.instance.AddCollectable(pc))

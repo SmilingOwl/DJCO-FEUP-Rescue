@@ -22,7 +22,7 @@ public class TrapInstantiator : MonoBehaviour
     }
     
     void AddTrap() {
-        GameObject trap = ObjectPool.instance.GetTrap();
+        GameObject trap = ObjectPool.instance.GetObject("trap");
         if (trap != null) {
             if(ObstacleController.instance.AddObstacle(trap)){
                 activeTraps++;

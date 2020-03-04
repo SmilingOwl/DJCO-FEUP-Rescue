@@ -364,6 +364,7 @@ GameObject:
   - component: {fileID: 415765690}
   - component: {fileID: 415765689}
   - component: {fileID: 415765688}
+  - component: {fileID: 415765692}
   m_Layer: 0
   m_Name: apple
   m_TagString: Untagged
@@ -473,13 +474,25 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 415765687}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -32.89, y: 4.21, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -27.993479, y: 4.2021813, z: 7.559949}
   m_LocalScale: {x: 0.394606, y: 0.431633, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_Father: {fileID: 1217345008}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &415765692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 415765687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fef4fdf05c2853644a18ffc8e41e7837, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &513805948
 GameObject:
   m_ObjectHideFlags: 0
@@ -900,7 +913,7 @@ Transform:
   m_LocalScale: {x: 1.59547, y: 1.403847, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &739672842
 Rigidbody2D:
@@ -1048,8 +1061,42 @@ Transform:
   - {fileID: 1727989986}
   - {fileID: 2142892200}
   - {fileID: 704229322}
+  - {fileID: 1217345008}
   m_Father: {fileID: 0}
   m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1217345007
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1217345008}
+  m_Layer: 0
+  m_Name: Collectables
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1217345008
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1217345007}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.037222, y: -0.78355324, z: 2.8636446}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1718945283}
+  - {fileID: 415765691}
+  - {fileID: 2021710673}
+  m_Father: {fileID: 965050850}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1285501202
 GameObject:
@@ -1065,6 +1112,7 @@ GameObject:
   - component: {fileID: 1285501206}
   - component: {fileID: 1285501207}
   - component: {fileID: 1285501208}
+  - component: {fileID: 1285501209}
   m_Layer: 0
   m_Name: Obstacle Controller
   m_TagString: Untagged
@@ -1159,6 +1207,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activePc: 0
+--- !u!114 &1285501209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1285501202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c90d8976372d6a4aaffee79d8d45157, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeApples: 0
 --- !u!1 &1529314629
 GameObject:
   m_ObjectHideFlags: 0
@@ -1323,12 +1384,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1718945278}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -36.678, y: 1.409, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -31.78148, y: 1.4011813, z: 7.559949}
   m_LocalScale: {x: 0.141046, y: 0.152692, z: 0.647}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Father: {fileID: 1217345008}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1727989985
 GameObject:
@@ -1534,14 +1595,17 @@ MonoBehaviour:
   pcPool: []
   trapPool: []
   dustbinPool: []
+  applePool: []
   bench: {fileID: 2142892198}
   pc: {fileID: 1718945278}
   trap: {fileID: 1727989985}
   dustbin: {fileID: 704229321}
-  pcAmount: 10
+  apple: {fileID: 415765687}
+  pcAmount: 6
   benchAmount: 2
   trapAmount: 2
   dustbinAmount: 2
+  appleAmount: 1
 --- !u!4 &1916146999
 Transform:
   m_ObjectHideFlags: 0
@@ -1651,12 +1715,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2021710670}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -32.88, y: 1.384, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -27.98348, y: 1.3761812, z: 7.559949}
   m_LocalScale: {x: 0.21212156, y: 0.1897089, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_Father: {fileID: 1217345008}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &2021710674
 BoxCollider2D:

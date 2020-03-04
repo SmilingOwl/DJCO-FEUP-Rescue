@@ -22,7 +22,7 @@ public class DustbinInstantiator : MonoBehaviour
     }
     
     void AddDustbin() {
-        GameObject dustbin = ObjectPool.instance.GetDustbin();
+        GameObject dustbin = ObjectPool.instance.GetObject("dustbin");
         if (dustbin != null) {
             if(ObstacleController.instance.AddObstacle(dustbin)){
                 activeDustbins++;
