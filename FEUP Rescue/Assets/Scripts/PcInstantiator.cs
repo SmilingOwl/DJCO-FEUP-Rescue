@@ -20,7 +20,7 @@ public class PcInstantiator : MonoBehaviour
     public void RemovePc(GameObject obstacle)
     {
         activePc--;
-        ObstacleController.instance.RemoveObstacle(obstacle);
+        ObstacleController.instance.RemoveCollectable(obstacle);
     }
 
     void AddPc()
@@ -28,7 +28,7 @@ public class PcInstantiator : MonoBehaviour
         GameObject pc = ObjectPool.instance.GetPc();
         if (pc != null)
         {
-            if (ObstacleController.instance.AddObstacle(pc))
+            if (ObstacleController.instance.AddCollectable(pc))
             {
                 activePc++;
             }
@@ -45,7 +45,7 @@ public class PcInstantiator : MonoBehaviour
                 ObjectPool.instance.pcPool[i].transform.position -= new Vector3(Time.deltaTime * ObstacleController.instance.obstacleVelocity, 0f, 0f);
             }
         }
-        if (activePc < ObjectPool.instance.pcAmount && Random.Range(0, 200) == 0)
+        if (activePc < ObjectPool.instance.pcAmount && Random.Range(0, 100) == 0)
         {
             this.AddPc();
         }
