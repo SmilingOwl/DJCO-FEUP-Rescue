@@ -38,7 +38,7 @@ public class AppleInstantiator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (activeApples < ObjectPool.instance.appleAmount && Random.Range(0, 200) == 0)
+        if (activeApples < ObjectPool.instance.appleAmount && Random.Range(0, 500) == 0)
         {
             this.AddApple();
         }

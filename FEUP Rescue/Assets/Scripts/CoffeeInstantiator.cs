@@ -38,7 +38,7 @@ public class CoffeeInstantiator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (activeCoffee < ObjectPool.instance.coffeeAmount && Random.Range(0, 200) == 0)
+        if (activeCoffee < ObjectPool.instance.coffeeAmount && Random.Range(0, 400) == 0)
         {
             this.AddCoffee();
         }

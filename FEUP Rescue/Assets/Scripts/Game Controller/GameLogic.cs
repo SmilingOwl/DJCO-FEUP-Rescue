@@ -54,4 +54,8 @@ public class GameLogic : MonoBehaviour
         speeding = true;
         speedingTime = 0f;
     }
+
+    public bool isSpeeding() {
+        return speeding;
+    }
 }
