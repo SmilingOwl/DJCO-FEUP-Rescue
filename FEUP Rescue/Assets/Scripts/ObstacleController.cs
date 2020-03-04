@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class ObstacleController : MonoBehaviour
 {
-    public int obstacleAmount = 4;
-    public int collectableAmount = 10;
-    public float obstacleVelocity = 11f;
+    public int obstacleAmount = 5;
+    public int collectableAmount = 8;
+    public float obstacleVelocity = 10.3f;
     public static ObstacleController instance;
     public List<GameObject> activeObstacles;
     public List<GameObject> activeCollectables;

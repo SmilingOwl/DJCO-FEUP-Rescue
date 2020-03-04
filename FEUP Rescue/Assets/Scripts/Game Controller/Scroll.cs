@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Scroll : MonoBehaviour
 {
-    public float background_speed = 0.3f;
+    public float background_speed = 0.2f;
     public Renderer background_renderer;
 
     // Start is called before the first frame update
