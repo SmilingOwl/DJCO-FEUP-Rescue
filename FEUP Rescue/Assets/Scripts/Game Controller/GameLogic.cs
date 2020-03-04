@@ -8,6 +8,9 @@ public class GameLogic : MonoBehaviour
     public int lives = 3;
     public int max_lives = 3;
     int points = 0;
+    bool speeding = false;
+    float speedingTime = 0f;
+    public float maxSpeedingTime = 4f;
 
     void Awake() {
         instance = this;
@@ -18,12 +21,21 @@ public class GameLogic : MonoBehaviour
     {
         points = 0;
         lives = max_lives;
+        speeding = false;
+        speedingTime = 0f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(speeding) {
+            speedingTime += Time.deltaTime;
+            if(speedingTime >= maxSpeedingTime)
+            {
+                speeding = false;
+                speedingTime = 0f;
+            }
+        }
     }
 
     public void IncrementPoints() {
@@ -36,5 +48,10 @@ public class GameLogic : MonoBehaviour
             lives++;
             Debug.Log("Lives: " + lives);
         }
+    }
+
+    public void SpeedUp() {
+        speeding = true;
+        speedingTime = 0f;
     }
 }
