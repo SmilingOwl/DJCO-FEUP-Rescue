@@ -349,6 +349,8 @@ MonoBehaviour:
   runSpeed: 60
   attackPoint: {fileID: 1529314630}
   attackRange: 0.6
+  attackDamage: 50
+  attackRate: 2
   enemyLayers:
     serializedVersion: 2
     m_Bits: 1024
@@ -932,9 +934,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 739672837}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ddff30ce2a99974f9a81a23b3758509, type: 3}
+  m_Script: {fileID: 11500000, guid: 42a4e8bd336f4b649be1ba8ba3ceea4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 100
+  animator: {fileID: 739672839}
 --- !u!1 &833593796
 GameObject:
   m_ObjectHideFlags: 0

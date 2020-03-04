@@ -16,6 +16,9 @@ public class PlayerMovement2D : MonoBehaviour
 
     public Transform attackPoint;
     public float attackRange = 0.5f;
+    public int attackDamage = 50;
+    public float attackRate = 2f;
+    float nextAttackTime = 0f;
     public LayerMask enemyLayers;
 
     // Start is called before the first frame update
@@ -33,9 +36,13 @@ public class PlayerMovement2D : MonoBehaviour
         }
 
         //ATTACK
-        if(Input.GetKeyDown(KeyCode.Space))
+        if (Time.time >= nextAttackTime)
         {
-            Attack();
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Attack();
+                nextAttackTime = Time.time + 1f / attackRate;
+            }
         }
         
 
@@ -61,7 +68,7 @@ public class PlayerMovement2D : MonoBehaviour
 
         foreach(Collider2D enemy in hitEnemies)
         {
-            Debug.Log("We hit" + enemy.name);
+            enemy.GetComponent<Thief>().TakeDamage(attackDamage);
         }
     }
 
