@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 193675779}
   m_Layer: 8
   m_Name: Hero
-  m_TagString: Untagged
+  m_TagString: Hero
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -263,8 +263,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 193675776}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.76, y: -1.59, z: 0}
-  m_LocalScale: {x: 1.4935244, y: 1.3869963, z: 2.1305625}
+  m_LocalPosition: {x: -12.464, y: -2.216, z: 0}
+  m_LocalScale: {x: 1.3725489, y: 1.2066867, z: 2.1305625}
   m_Children:
   - {fileID: 1869761344}
   - {fileID: 619997914}
@@ -305,7 +305,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f379ca1153cf06846a939db0e48702c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_JumpForce: 800
+  m_JumpForce: 1500
   m_CrouchSpeed: 0.4
   m_MovementSmoothing: 0.05
   m_AirControl: 1
@@ -911,8 +911,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 739672837}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.53, y: -0.48, z: 0}
-  m_LocalScale: {x: 1.59547, y: 1.403847, z: 1}
+  m_LocalPosition: {x: 7.12, y: -2.23, z: 0}
+  m_LocalScale: {x: 1.3468862, y: 1.20429, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
@@ -952,6 +952,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   animator: {fileID: 739672839}
+  player: {fileID: 193675781}
+  isFlipped: 0
 --- !u!1 &833593796
 GameObject:
   m_ObjectHideFlags: 0
