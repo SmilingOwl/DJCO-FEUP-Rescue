@@ -665,7 +665,7 @@ GameObject:
   - component: {fileID: 704229325}
   m_Layer: 0
   m_Name: dustbin
-  m_TagString: Untagged
+  m_TagString: Dustbin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -901,6 +901,7 @@ GameObject:
   - component: {fileID: 1285501205}
   - component: {fileID: 1285501206}
   - component: {fileID: 1285501207}
+  - component: {fileID: 1285501208}
   m_Layer: 0
   m_Name: Obstacle Controller
   m_TagString: Untagged
@@ -947,11 +948,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b953c9ff8a93f9947aac96feacce77df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacleAmount: 4
+  obstacleAmount: 10
+  collectableAmount: 10
   obstacleVelocity: 11
   activeObstacles: []
-  initialPosition: {x: 22, y: -6, z: 0}
+  activeCollectables: []
+  initialObstaclePosition: {x: 22, y: -6, z: 0}
+  initialCollectablePosition: {x: 20, y: -2.5, z: 0}
   spaceBetween: 5
+  spaceBetweenCollectables: 0.5
 --- !u!114 &1285501206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -978,6 +983,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeDustbins: 0
+--- !u!114 &1285501208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1285501202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 214385bbf6acc58408c47693314990f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activePc: 0
 --- !u!1 &1529314629
 GameObject:
   m_ObjectHideFlags: 0
@@ -1244,8 +1262,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1718945278}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -36.05, y: 1.93, z: 0}
-  m_LocalScale: {x: 0.218, y: 0.236, z: 1}
+  m_LocalPosition: {x: -36.678, y: 1.409, z: 0}
+  m_LocalScale: {x: 0.141046, y: 0.152692, z: 0.647}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9
@@ -1265,7 +1283,7 @@ GameObject:
   - component: {fileID: 1727989990}
   m_Layer: 0
   m_Name: trap
-  m_TagString: Untagged
+  m_TagString: Trap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1460,8 +1478,8 @@ MonoBehaviour:
   dustbin: {fileID: 704229321}
   pcAmount: 10
   benchAmount: 2
-  trapAmount: 3
-  dustbinAmount: 3
+  trapAmount: 2
+  dustbinAmount: 2
 --- !u!4 &1916146999
 Transform:
   m_ObjectHideFlags: 0
@@ -1618,7 +1636,7 @@ GameObject:
   - component: {fileID: 2142892203}
   m_Layer: 0
   m_Name: bench
-  m_TagString: Untagged
+  m_TagString: Bench
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

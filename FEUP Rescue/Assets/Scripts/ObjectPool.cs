@@ -13,7 +13,7 @@ public class ObjectPool : MonoBehaviour
     public GameObject pc;
     public GameObject trap;
     public GameObject dustbin;
-    public int pcAmount = 10; 
+    public int pcAmount = 5; 
     public int benchAmount = 2;
     public int trapAmount = 3;
     public int dustbinAmount = 3;
@@ -26,7 +26,7 @@ public class ObjectPool : MonoBehaviour
     void Start()
     {
         benchPool = new List<GameObject>();
-        for(int i = 0; i < benchAmount || i < trapAmount || i < dustbinAmount; i++) {
+        for(int i = 0; i < benchAmount || i < trapAmount || i < dustbinAmount || i < pcAmount; i++) {
             if(i < benchAmount) {
                 GameObject obj = (GameObject) Instantiate(bench);
                 obj.SetActive(false); 
