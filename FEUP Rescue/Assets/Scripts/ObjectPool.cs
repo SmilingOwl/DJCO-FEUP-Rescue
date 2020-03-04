@@ -10,16 +10,19 @@ public class ObjectPool : MonoBehaviour
     public List<GameObject> trapPool;
     public List<GameObject> dustbinPool;
     public List<GameObject> applePool;
+    public List<GameObject> coffeePool;
     public GameObject bench;
     public GameObject pc;
     public GameObject trap;
     public GameObject dustbin;
     public GameObject apple;
+    public GameObject coffee;
     public int pcAmount = 6; 
     public int benchAmount = 2;
     public int trapAmount = 3;
     public int dustbinAmount = 3;
     public int appleAmount = 1;
+    public int coffeeAmount = 1;
 
     void Awake() {
         instance = this;
@@ -29,7 +32,7 @@ public class ObjectPool : MonoBehaviour
     void Start()
     {
         benchPool = new List<GameObject>();
-        for(int i = 0; i < benchAmount || i < trapAmount || i < dustbinAmount || i < pcAmount || i < appleAmount; i++) {
+        for(int i = 0; i < benchAmount || i < trapAmount || i < dustbinAmount || i < pcAmount || i < appleAmount || i < coffeeAmount; i++) {
             if(i < benchAmount) {
                 GameObject obj = (GameObject) Instantiate(bench);
                 obj.SetActive(false); 
@@ -57,6 +60,12 @@ public class ObjectPool : MonoBehaviour
                 obj.SetActive(false);
                 applePool.Add(obj);
             }
+            if (i < coffeeAmount)
+            {
+                GameObject obj = (GameObject)Instantiate(coffee);
+                obj.SetActive(false);
+                coffeePool.Add(obj);
+            }
         }
     }
 
@@ -72,6 +81,8 @@ public class ObjectPool : MonoBehaviour
             pool = pcPool;
         } else if(obj == "apple") {
             pool = applePool;
+        } else if(obj == "coffee") {
+            pool = coffeePool;
         }
 
         for (int i = 0; i < pool.Count; i++) {

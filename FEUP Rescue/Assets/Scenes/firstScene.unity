@@ -913,7 +913,7 @@ Transform:
   m_LocalScale: {x: 1.59547, y: 1.403847, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &739672842
 Rigidbody2D:
@@ -1061,7 +1061,6 @@ Transform:
   - {fileID: 1727989986}
   - {fileID: 2142892200}
   - {fileID: 704229322}
-  - {fileID: 1217345008}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1089,14 +1088,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1217345007}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.037222, y: -0.78355324, z: 2.8636446}
+  m_LocalPosition: {x: -4.8965206, y: 0.007818639, z: -7.559949}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1718945283}
   - {fileID: 415765691}
   - {fileID: 2021710673}
-  m_Father: {fileID: 965050850}
-  m_RootOrder: 3
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1285501202
 GameObject:
@@ -1113,6 +1112,7 @@ GameObject:
   - component: {fileID: 1285501207}
   - component: {fileID: 1285501208}
   - component: {fileID: 1285501209}
+  - component: {fileID: 1285501210}
   m_Layer: 0
   m_Name: Obstacle Controller
   m_TagString: Untagged
@@ -1159,8 +1159,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b953c9ff8a93f9947aac96feacce77df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacleAmount: 10
-  collectableAmount: 10
+  obstacleAmount: 5
+  collectableAmount: 8
   obstacleVelocity: 11
   activeObstacles: []
   activeCollectables: []
@@ -1220,6 +1220,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeApples: 0
+--- !u!114 &1285501210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1285501202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9d681cdd24d7094483c1f84cb565b6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeCoffee: 0
 --- !u!1 &1529314629
 GameObject:
   m_ObjectHideFlags: 0
@@ -1596,16 +1609,19 @@ MonoBehaviour:
   trapPool: []
   dustbinPool: []
   applePool: []
+  coffeePool: []
   bench: {fileID: 2142892198}
   pc: {fileID: 1718945278}
   trap: {fileID: 1727989985}
   dustbin: {fileID: 704229321}
   apple: {fileID: 415765687}
+  coffee: {fileID: 2021710670}
   pcAmount: 6
   benchAmount: 2
   trapAmount: 2
   dustbinAmount: 2
   appleAmount: 1
+  coffeeAmount: 1
 --- !u!4 &1916146999
 Transform:
   m_ObjectHideFlags: 0
@@ -1632,6 +1648,7 @@ GameObject:
   - component: {fileID: 2021710672}
   - component: {fileID: 2021710671}
   - component: {fileID: 2021710674}
+  - component: {fileID: 2021710675}
   m_Layer: 0
   m_Name: coffee
   m_TagString: Untagged
@@ -1748,6 +1765,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 7.4561214, y: 6.3490396}
   m_EdgeRadius: 0
+--- !u!114 &2021710675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2021710670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ef76dd86e9d17c43b6c90aa4ba2bf32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2142892198
 GameObject:
   m_ObjectHideFlags: 0

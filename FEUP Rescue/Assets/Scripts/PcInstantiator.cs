@@ -38,13 +38,6 @@ public class PcInstantiator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        for (int i = 0; i < ObjectPool.instance.pcPool.Count; i++)
-        {
-            if (ObjectPool.instance.pcPool[i].activeInHierarchy)
-            {
-                ObjectPool.instance.pcPool[i].transform.position -= new Vector3(Time.deltaTime * ObstacleController.instance.obstacleVelocity, 0f, 0f);
-            }
-        }
         if (activePc < ObjectPool.instance.pcAmount && Random.Range(0, 100) == 0)
         {
             this.AddPc();

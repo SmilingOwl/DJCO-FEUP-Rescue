@@ -33,11 +33,6 @@ public class BenchInstantiator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        for (int i = 0; i < ObjectPool.instance.benchPool.Count; i++) {
-            if (ObjectPool.instance.benchPool[i].activeInHierarchy) {
-                ObjectPool.instance.benchPool[i].transform.position -= new Vector3(Time.deltaTime * ObstacleController.instance.obstacleVelocity, 0f, 0f);
-            }
-        }
         if(activeBenches < ObjectPool.instance.benchAmount && Random.Range(0, 200) == 0) {
             this.AddBench();
         }

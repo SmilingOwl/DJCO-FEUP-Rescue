@@ -38,13 +38,6 @@ public class AppleInstantiator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        for (int i = 0; i < ObjectPool.instance.applePool.Count; i++)
-        {
-            if (ObjectPool.instance.applePool[i].activeInHierarchy)
-            {
-                ObjectPool.instance.applePool[i].transform.position -= new Vector3(Time.deltaTime * ObstacleController.instance.obstacleVelocity, 0f, 0f);
-            }
-        }
         if (activeApples < ObjectPool.instance.appleAmount && Random.Range(0, 200) == 0)
         {
             this.AddApple();

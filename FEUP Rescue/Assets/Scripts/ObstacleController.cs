@@ -112,6 +112,20 @@ public class ObstacleController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        for (int i = 0; i < activeObstacles.Count; i++)
+        {
+            if (activeObstacles[i].activeInHierarchy)
+            {
+                activeObstacles[i].transform.position -= new Vector3(Time.deltaTime * obstacleVelocity, 0f, 0f);
+            }
+        }
+
+        for (int i = 0; i < activeCollectables.Count; i++)
+        {
+            if (activeCollectables[i].activeInHierarchy)
+            {
+                activeCollectables[i].transform.position -= new Vector3(Time.deltaTime * obstacleVelocity, 0f, 0f);
+            }
+        }
     }
 }
