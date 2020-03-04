@@ -20,4 +20,12 @@ public class TrapController : MonoBehaviour
         gameObject.SetActive(false);
         TrapInstantiator.instance.RemoveTrap(gameObject);
     }
+
+    
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Hero") {
+            GameLogic.instance.DecreaseLives();
+        }
+    }
 }

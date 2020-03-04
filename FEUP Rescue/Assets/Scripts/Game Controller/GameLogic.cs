@@ -11,6 +11,10 @@ public class GameLogic : MonoBehaviour
     bool speeding = false;
     float speedingTime = 0f;
     public float maxSpeedingTime = 4f;
+    bool inTimeOut = false;
+    float deltaTimeOut = 0f;
+    public float maxTimeOut = 3f;
+
 
     void Awake() {
         instance = this;
@@ -23,6 +27,8 @@ public class GameLogic : MonoBehaviour
         lives = max_lives;
         speeding = false;
         speedingTime = 0f;
+        inTimeOut = false;
+        deltaTimeOut = 0f;
     }
 
     // Update is called once per frame
@@ -34,6 +40,14 @@ public class GameLogic : MonoBehaviour
             {
                 speeding = false;
                 speedingTime = 0f;
+            }
+        }
+        if(inTimeOut) {
+            deltaTimeOut += Time.deltaTime;
+            if(deltaTimeOut >= maxTimeOut)
+            {
+                inTimeOut = false;
+                deltaTimeOut = 0f;
             }
         }
     }
@@ -57,5 +71,22 @@ public class GameLogic : MonoBehaviour
 
     public bool isSpeeding() {
         return speeding;
+    }
+
+    public void DecreaseLives() {
+        if(!inTimeOut && lives > 1) {
+            lives--;
+            Debug.Log("Lives: " + lives);
+            inTimeOut = true;
+        } else if (!inTimeOut) {
+            lives = 0;
+            Debug.Log("Lives: " + lives);
+            this.GameOver();
+        }
+    }
+
+    public void GameOver() {
+        //do stuff
+        Debug.Log("Game Over!");
     }
 }
