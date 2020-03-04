@@ -8,6 +8,10 @@ public class Thief : MonoBehaviour
     int currentHealth;
     public Animator animator;
 
+    public Transform player;
+
+    public bool isFlipped = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,5 +37,24 @@ public class Thief : MonoBehaviour
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false; 
         
+    }
+
+    public void LookAtPlayer()
+    {
+        Vector3 flipped = transform.localScale;
+        flipped.z *= -1f;
+
+        if (transform.position.x > player.position.x && isFlipped)
+        {
+            transform.localScale = flipped;
+            transform.Rotate(0f, 180f, 0f);
+            isFlipped = false;
+        }
+        else if (transform.position.x < player.position.x && !isFlipped)
+        {
+            transform.localScale = flipped;
+            transform.Rotate(0f, 180f, 0f);
+            isFlipped = true;
+        }
     }
 }
