@@ -365,7 +365,7 @@ GameObject:
   - component: {fileID: 415765689}
   - component: {fileID: 415765688}
   m_Layer: 0
-  m_Name: frame_00_delay-0.03s
+  m_Name: apple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1123,7 +1123,7 @@ GameObject:
   - component: {fileID: 1718945280}
   - component: {fileID: 1718945279}
   m_Layer: 0
-  m_Name: frame_00_delay-1s
+  m_Name: pc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1451,11 +1451,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   benchPool: []
+  pcPool: []
   trapPool: []
   dustbinPool: []
   bench: {fileID: 2142892198}
+  pc: {fileID: 1718945278}
   trap: {fileID: 1727989985}
   dustbin: {fileID: 704229321}
+  pcAmount: 10
   benchAmount: 2
   trapAmount: 3
   dustbinAmount: 3
@@ -1486,7 +1489,7 @@ GameObject:
   - component: {fileID: 2021710671}
   - component: {fileID: 2021710674}
   m_Layer: 0
-  m_Name: frame_00_delay-0.04s
+  m_Name: coffee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

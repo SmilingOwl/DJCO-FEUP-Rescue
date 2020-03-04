@@ -6,11 +6,14 @@ public class ObjectPool : MonoBehaviour
 {
     public static ObjectPool instance;
     public List<GameObject> benchPool;
+    public List<GameObject> pcPool;
     public List<GameObject> trapPool;
     public List<GameObject> dustbinPool;
     public GameObject bench;
+    public GameObject pc;
     public GameObject trap;
     public GameObject dustbin;
+    public int pcAmount = 10; 
     public int benchAmount = 2;
     public int trapAmount = 3;
     public int dustbinAmount = 3;
@@ -39,6 +42,13 @@ public class ObjectPool : MonoBehaviour
                 obj.SetActive(false); 
                 dustbinPool.Add(obj);
             }
+            if (i < pcAmount)
+            {
+                GameObject obj = (GameObject)Instantiate(pc);
+                obj.SetActive(false);
+                pcPool.Add(obj);
+            }
+
         }
     }
 
@@ -64,6 +74,18 @@ public class ObjectPool : MonoBehaviour
         for (int i = 0; i < dustbinPool.Count; i++) {
             if (!dustbinPool[i].activeInHierarchy) {
                 return dustbinPool[i];
+            }
+        }
+        return null;
+    }
+
+    public GameObject GetPc()
+    {
+        for (int i = 0; i < pcPool.Count; i++)
+        {
+            if (!pcPool[i].activeInHierarchy)
+            {
+                return pcPool[i];
             }
         }
         return null;
