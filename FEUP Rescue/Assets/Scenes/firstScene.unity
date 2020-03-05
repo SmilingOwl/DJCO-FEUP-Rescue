@@ -501,6 +501,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  appleValue: 10
   animator: {fileID: 193675779}
   healthBar: {fileID: 90660086}
 --- !u!1 &415765687
@@ -2026,7 +2027,8 @@ MonoBehaviour:
   lives: 3
   max_lives: 3
   maxSpeedingTime: 4
-  maxTimeOut: 3
+  inTimeOut: 0
+  maxTimeOut: 0.5
 --- !u!1 &1961183157
 GameObject:
   m_ObjectHideFlags: 0

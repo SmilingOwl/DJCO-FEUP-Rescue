@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
 
 public class Thief : MonoBehaviour
 {
@@ -65,17 +64,13 @@ public class Thief : MonoBehaviour
     }
 
     public void Attack()
-    {
-        System.Random rnd = new System.Random();
-        int attackRandom = rnd.Next(1, 5);
-
+    { 
         Collider2D[] hitHero = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, hero);
 
         //make damage
         foreach (Collider2D hero in hitHero)
         {
-            if(attackRandom == 1)
-                hero.GetComponent<PlayerHealth>().TakeDamage(attackDamage);
+            hero.GetComponent<PlayerHealth>().TakeDamage(attackDamage);
         }
     }
 }
