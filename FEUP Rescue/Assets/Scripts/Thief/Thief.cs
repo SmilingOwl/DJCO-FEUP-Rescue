@@ -12,6 +12,12 @@ public class Thief : MonoBehaviour
 
     public bool isFlipped = false;
 
+    public int attackDamage = 20;
+    public Vector3 attackOffset;
+    public float attackRange = 1f;
+    public Transform attackPoint;
+    public LayerMask hero;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -55,6 +61,17 @@ public class Thief : MonoBehaviour
             transform.localScale = flipped;
             transform.Rotate(0f, 180f, 0f);
             isFlipped = true;
+        }
+    }
+
+    public void Attack()
+    {
+        Collider2D[] hitHero = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, hero);
+
+        //make damage
+        foreach (Collider2D hero in hitHero)
+        {
+            hero.GetComponent<PlayerHealth>().TakeDamage(attackDamage);
         }
     }
 }

@@ -44,7 +44,6 @@ public class PlayerMovement2D : MonoBehaviour
                 nextAttackTime = Time.time + 1f / attackRate;
             }
         }
-        
 
         // not using (no sprite) but just in case..
         if (Input.GetButtonDown("Crouch"))
@@ -65,18 +64,10 @@ public class PlayerMovement2D : MonoBehaviour
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 
         //make damage
-
         foreach(Collider2D enemy in hitEnemies)
         {
             enemy.GetComponent<Thief>().TakeDamage(attackDamage);
         }
-    }
-
-    void OnDrawGizmosSelected()
-    {
-        if (attackPoint == null)
-            return;
-        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
 
     public void OnLanding()

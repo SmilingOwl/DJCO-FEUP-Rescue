@@ -8,7 +8,8 @@ public class ThiefRun : StateMachineBehaviour
     Rigidbody2D rb;
     Thief thief;
 
-    public float speed = 2.5f;
+    public float speed = 2f;
+    public float attackRange = 4f;
 
     //OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -27,13 +28,18 @@ public class ThiefRun : StateMachineBehaviour
         Vector2 newPos = Vector2.MoveTowards(rb.position, target, speed * Time.fixedDeltaTime);
         
         rb.MovePosition(newPos);
+
+        if(Vector2.Distance(player.position, rb.position) <= attackRange)
+        {
+            animator.SetTrigger("Attack");
+        }
         
     }
 
     //OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        
+        animator.ResetTrigger("Attack");
     }
 
 }
