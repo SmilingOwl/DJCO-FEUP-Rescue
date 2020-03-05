@@ -13,7 +13,6 @@ public class Thief : MonoBehaviour
     public bool isFlipped = false;
 
     public int attackDamage = 20;
-    public Vector3 attackOffset;
     public float attackRange = 1f;
     public Transform attackPoint;
     public LayerMask hero;
