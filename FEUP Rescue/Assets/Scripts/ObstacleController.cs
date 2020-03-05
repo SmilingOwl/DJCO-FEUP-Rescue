@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class ObstacleController : MonoBehaviour
 {
-    public int obstacleAmount = 4;
-    public int collectableAmount = 10;
-    public float obstacleVelocity = 11f;
+    public int obstacleAmount = 5;
+    public int collectableAmount = 8;
+    public float obstacleVelocity = 10.3f;
     public static ObstacleController instance;
     public List<GameObject> activeObstacles;
     public List<GameObject> activeCollectables;
@@ -112,6 +112,20 @@ public class ObstacleController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        for (int i = 0; i < activeObstacles.Count; i++)
+        {
+            if (activeObstacles[i].activeInHierarchy)
+            {
+                activeObstacles[i].transform.position -= new Vector3(Time.deltaTime * obstacleVelocity, 0f, 0f);
+            }
+        }
+
+        for (int i = 0; i < activeCollectables.Count; i++)
+        {
+            if (activeCollectables[i].activeInHierarchy)
+            {
+                activeCollectables[i].transform.position -= new Vector3(Time.deltaTime * obstacleVelocity, 0f, 0f);
+            }
+        }
     }
 }

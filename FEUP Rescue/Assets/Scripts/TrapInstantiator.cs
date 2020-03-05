@@ -22,7 +22,7 @@ public class TrapInstantiator : MonoBehaviour
     }
     
     void AddTrap() {
-        GameObject trap = ObjectPool.instance.GetTrap();
+        GameObject trap = ObjectPool.instance.GetObject("trap");
         if (trap != null) {
             if(ObstacleController.instance.AddObstacle(trap)){
                 activeTraps++;
@@ -33,11 +33,6 @@ public class TrapInstantiator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        for (int i = 0; i < ObjectPool.instance.trapPool.Count; i++) {
-            if (ObjectPool.instance.trapPool[i].activeInHierarchy) {
-                ObjectPool.instance.trapPool[i].transform.position -= new Vector3(Time.deltaTime * ObstacleController.instance.obstacleVelocity, 0f, 0f);
-            }
-        }
         if(activeTraps < ObjectPool.instance.trapAmount && Random.Range(0, 200) == 0) {
             this.AddTrap();
         }

@@ -25,7 +25,7 @@ public class PcInstantiator : MonoBehaviour
 
     void AddPc()
     {
-        GameObject pc = ObjectPool.instance.GetPc();
+        GameObject pc = ObjectPool.instance.GetObject("pc");
         if (pc != null)
         {
             if (ObstacleController.instance.AddCollectable(pc))
@@ -38,13 +38,6 @@ public class PcInstantiator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        for (int i = 0; i < ObjectPool.instance.pcPool.Count; i++)
-        {
-            if (ObjectPool.instance.pcPool[i].activeInHierarchy)
-            {
-                ObjectPool.instance.pcPool[i].transform.position -= new Vector3(Time.deltaTime * ObstacleController.instance.obstacleVelocity, 0f, 0f);
-            }
-        }
         if (activePc < ObjectPool.instance.pcAmount && Random.Range(0, 100) == 0)
         {
             this.AddPc();

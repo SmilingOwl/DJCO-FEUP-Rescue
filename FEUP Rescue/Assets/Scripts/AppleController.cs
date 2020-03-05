@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TrapController : MonoBehaviour
+public class AppleController : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -13,19 +13,22 @@ public class TrapController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
-
-    void OnBecameInvisible() {
+    
+    void OnBecameInvisible()
+    {
         gameObject.SetActive(false);
-        TrapInstantiator.instance.RemoveTrap(gameObject);
+        AppleInstantiator.instance.RemoveApple(gameObject);
     }
 
     
     void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "Hero") {
-            GameLogic.instance.DecreaseLives();
+            gameObject.SetActive(false);
+            AppleInstantiator.instance.RemoveApple(gameObject);
+            GameLogic.instance.IncrementLives();
         }
     }
 }
