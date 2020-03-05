@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
 
 public class Thief : MonoBehaviour
 {
@@ -18,10 +17,13 @@ public class Thief : MonoBehaviour
     public Transform attackPoint;
     public LayerMask hero;
 
+    bool dead = false;
+
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
+        dead = false;
     }
 
     public void TakeDamage(int damage)
@@ -41,7 +43,7 @@ public class Thief : MonoBehaviour
 
         GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
         GetComponent<Collider2D>().enabled = false;
-        this.enabled = false; 
+        dead = true;
         
     }
 
@@ -66,16 +68,19 @@ public class Thief : MonoBehaviour
 
     public void Attack()
     {
-        System.Random rnd = new System.Random();
-        int attackRandom = rnd.Next(1, 5);
 
         Collider2D[] hitHero = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, hero);
 
         //make damage
         foreach (Collider2D hero in hitHero)
         {
-            if(attackRandom == 1)
-                hero.GetComponent<PlayerHealth>().TakeDamage(attackDamage);
+            hero.GetComponent<PlayerHealth>().TakeDamage(attackDamage);
+        }
+    }
+
+    void Update() {
+        if(dead){
+            transform.position -= new Vector3(Time.deltaTime * ObstacleController.instance.obstacleVelocity, 0f, 0f);
         }
     }
 }
