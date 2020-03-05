@@ -14,6 +14,7 @@ public class Thief : MonoBehaviour
 
     public int attackDamage = 20;
     public float attackRange = 1f;
+    float nextAttackTime = 0f;
     public Transform attackPoint;
     public LayerMask hero;
 
@@ -68,9 +69,13 @@ public class Thief : MonoBehaviour
         Collider2D[] hitHero = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, hero);
 
         //make damage
-        foreach (Collider2D hero in hitHero)
+        if (Time.time >= nextAttackTime)
         {
-            hero.GetComponent<PlayerHealth>().TakeDamage(attackDamage);
+            foreach (Collider2D hero in hitHero)
+            {
+                hero.GetComponent<PlayerHealth>().TakeDamage(attackDamage);
+                nextAttackTime = Time.time + 1.5f;
+            }
         }
     }
 }
