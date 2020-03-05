@@ -9,17 +9,19 @@ public class PlayerHealth : MonoBehaviour
     public int appleValue = 10;
     public Animator animator;
     public HealthBar healthBar;
+    bool dead = false;
 
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+        dead = false;
     }
 
     public void TakeDamage(int damage)
     {
-        if(!GameLogic.instance.inTimeOut){
+        if(!GameLogic.instance.inTimeOut && !dead){
             GameLogic.instance.setTimeOut();
             currentHealth -= damage;
             healthBar.SetHealth(currentHealth);
@@ -27,6 +29,7 @@ public class PlayerHealth : MonoBehaviour
 
             if (currentHealth <= 0)
             {
+                dead = true;
                 Die();
             }
         }
