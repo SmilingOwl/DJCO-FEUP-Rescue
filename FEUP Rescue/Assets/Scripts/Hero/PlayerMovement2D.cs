@@ -26,9 +26,9 @@ public class PlayerMovement2D : MonoBehaviour
     {
         //RUN
         float runSpeedAux = runSpeed;
-        if(GameLogic.instance.isSpeeding()) {
-            runSpeedAux *= 2;
-        }
+        //if(GameLogic.instance.isSpeeding()) {
+          //  runSpeedAux *= 2;
+        //}
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeedAux;
         animator.SetFloat("speed", Mathf.Abs(horizontalMove));
 
