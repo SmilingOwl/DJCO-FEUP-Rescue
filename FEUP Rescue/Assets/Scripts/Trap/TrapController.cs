@@ -25,7 +25,7 @@ public class TrapController : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "Hero") {
-            GameLogic.instance.DecreaseLives();
+            collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(20);
         }
     }
 }

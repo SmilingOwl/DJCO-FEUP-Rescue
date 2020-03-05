@@ -11,9 +11,9 @@ public class GameLogic : MonoBehaviour
     bool speeding = false;
     float speedingTime = 0f;
     public float maxSpeedingTime = 4f;
-    bool inTimeOut = false;
+    public bool inTimeOut = false;
     float deltaTimeOut = 0f;
-    public float maxTimeOut = 3f;
+    public float maxTimeOut = 1f;
 
 
     void Awake() {
@@ -73,16 +73,8 @@ public class GameLogic : MonoBehaviour
         return speeding;
     }
 
-    public void DecreaseLives() {
-        if(!inTimeOut && lives > 1) {
-            lives--;
-            Debug.Log("Lives: " + lives);
-            inTimeOut = true;
-        } else if (!inTimeOut) {
-            lives = 0;
-            Debug.Log("Lives: " + lives);
-            this.GameOver();
-        }
+    public void setTimeOut() {
+        inTimeOut = true;
     }
 
     public void GameOver() {

@@ -28,7 +28,7 @@ public class AppleController : MonoBehaviour
         if(collision.gameObject.tag == "Hero") {
             gameObject.SetActive(false);
             AppleInstantiator.instance.RemoveApple(gameObject);
-            GameLogic.instance.IncrementLives();
+            collision.gameObject.GetComponent<PlayerHealth>().GetLife();
         }
     }
 }
