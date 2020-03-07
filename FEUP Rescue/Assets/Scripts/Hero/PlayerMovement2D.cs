@@ -31,10 +31,11 @@ public class PlayerMovement2D : MonoBehaviour
         }
         horizontalMove = Input.GetAxisRaw("Horizontal");
         if(horizontalMove < 0) {
-            horizontalMove *= (runSpeedAux + 11f);
+            horizontalMove *= (runSpeedAux + 11f * 4);
         } else {
             horizontalMove *= runSpeedAux;
         }
+        Debug.Log(": " + horizontalMove);
         animator.SetFloat("speed", Mathf.Abs(horizontalMove));
 
         //JUMP

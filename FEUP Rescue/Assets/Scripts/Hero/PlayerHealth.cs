@@ -40,6 +40,7 @@ public class PlayerHealth : MonoBehaviour
         if(currentHealth >= 100)
             currentHealth = 100;
         healthBar.SetHealth(currentHealth);
+        Debug.Log(currentHealth);
     }
 
     public void Die()
