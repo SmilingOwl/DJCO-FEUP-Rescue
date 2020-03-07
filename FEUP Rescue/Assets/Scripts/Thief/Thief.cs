@@ -100,10 +100,7 @@ public class Thief : MonoBehaviour
     }
     
     void Update() {
-        if(dead && gameObject.activeInHierarchy){
-            transform.position -= new Vector3(Time.deltaTime * ObstacleController.instance.obstacleVelocity, 0f, 0f);
-        }
-        else if(gameObject.activeInHierarchy) {
+        if(gameObject.activeInHierarchy) {
             centralPos -= new Vector3(Time.deltaTime * ObstacleController.instance.obstacleVelocity, 0f, 0f);
         }
     }

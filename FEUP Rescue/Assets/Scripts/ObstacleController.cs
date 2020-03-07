@@ -136,6 +136,10 @@ public class ObstacleController : MonoBehaviour
             }
         }
 
+        if(Thief.instance.gameObject.activeInHierarchy && Thief.instance.dead) {
+            Thief.instance.transform.position -= new Vector3(Time.deltaTime * obstacleVelocity, 0f, 0f);
+        }
+
         if(!Thief.instance.gameObject.activeInHierarchy && this.CanAddObstacle(Thief.instance.gameObject, true)) {
             Thief.instance.InitThief();
         }
