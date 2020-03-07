@@ -61,7 +61,7 @@ public class Thief : MonoBehaviour
     {
         animator.SetBool("isDead", true);
 
-        GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
+        GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
         GetComponent<Collider2D>().enabled = false;
         dead = true;
     }
@@ -100,6 +100,10 @@ public class Thief : MonoBehaviour
     }
     
     void Update() {
+        
+        if(gameObject.activeInHierarchy && dead) {
+            transform.position -= new Vector3(Time.deltaTime * ObstacleController.instance.obstacleVelocity, 0f, 0f);
+        }
         if(gameObject.activeInHierarchy) {
             centralPos -= new Vector3(Time.deltaTime * ObstacleController.instance.obstacleVelocity, 0f, 0f);
         }

@@ -26,7 +26,7 @@ public class CoffeeController : MonoBehaviour
     {
         if(collision.gameObject.tag == "Hero") {
             gameObject.SetActive(false);
-            AppleInstantiator.instance.RemoveApple(gameObject);
+            CoffeeInstantiator.instance.RemoveCoffee(gameObject);
             GameLogic.instance.SpeedUp();
         }
     }

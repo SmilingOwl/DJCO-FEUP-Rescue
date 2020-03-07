@@ -5,8 +5,6 @@ using UnityEngine;
 public class GameLogic : MonoBehaviour
 {
     public static GameLogic instance;
-    public int lives = 3;
-    public int max_lives = 3;
     int points = 0;
     bool speeding = false;
     float speedingTime = 0f;
@@ -24,7 +22,6 @@ public class GameLogic : MonoBehaviour
     void Start()
     {
         points = 0;
-        lives = max_lives;
         speeding = false;
         speedingTime = 0f;
         inTimeOut = false;
@@ -55,15 +52,6 @@ public class GameLogic : MonoBehaviour
     public void IncrementPoints() {
         points++;
         ScoreManager.scoreManager.UpdateScore(points);
-        Debug.Log(points);
-
-    }
-
-    public void IncrementLives() {
-        if(lives < max_lives) {
-            lives++;
-            Debug.Log("Lives: " + lives);
-        }
     }
 
     public void SpeedUp() {
