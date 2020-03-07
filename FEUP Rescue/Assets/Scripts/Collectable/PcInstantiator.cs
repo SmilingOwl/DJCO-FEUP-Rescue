@@ -28,6 +28,7 @@ public class PcInstantiator : MonoBehaviour
         GameObject pc = ObjectPool.instance.GetObject("pc");
         if (pc != null)
         {
+            Physics2D.IgnoreCollision(Thief.instance.GetComponent<Collider2D>(), pc.GetComponent<Collider2D>());   
             if (ObstacleController.instance.AddCollectable(pc))
             {
                 activePc++;

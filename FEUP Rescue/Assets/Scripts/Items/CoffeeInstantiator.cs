@@ -28,6 +28,7 @@ public class CoffeeInstantiator : MonoBehaviour
         GameObject coffee = ObjectPool.instance.GetObject("coffee");
         if (coffee != null)
         {
+            Physics2D.IgnoreCollision(Thief.instance.GetComponent<Collider2D>(), coffee.GetComponent<Collider2D>());   
             if (ObstacleController.instance.AddCollectable(coffee))
             {
                 activeCoffee++;

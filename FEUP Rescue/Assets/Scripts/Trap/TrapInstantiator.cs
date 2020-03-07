@@ -24,6 +24,7 @@ public class TrapInstantiator : MonoBehaviour
     void AddTrap() {
         GameObject trap = ObjectPool.instance.GetObject("trap");
         if (trap != null) {
+            Physics2D.IgnoreCollision(Thief.instance.GetComponent<Collider2D>(), trap.GetComponent<Collider2D>());   
             if(ObstacleController.instance.AddObstacle(trap)){
                 activeTraps++;
             }

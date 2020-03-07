@@ -23,13 +23,20 @@ public class ThiefRun : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         thief.LookAtPlayer();
+        speed = ObstacleController.instance.obstacleVelocity + 2f;
 
         Vector2 target = new Vector2(player.position.x, rb.position.y);
         Vector2 newPos = Vector2.MoveTowards(rb.position, target, speed * Time.fixedDeltaTime);
+        if(newPos.x < thief.centralPos.x - thief.deltaPos) {
+            newPos.x = thief.centralPos.x - thief.deltaPos;
+        } else if (newPos.x > thief.centralPos.x + thief.deltaPos) {
+            newPos.x = thief.centralPos.x + thief.deltaPos;
+        }
         
         rb.MovePosition(newPos);
 
-        if(Vector2.Distance(player.position, rb.position) <= attackRange)
+
+        if(!thief.dead && Vector2.Distance(player.position, rb.position) <= attackRange)
         {
             animator.SetTrigger("Attack");
         }

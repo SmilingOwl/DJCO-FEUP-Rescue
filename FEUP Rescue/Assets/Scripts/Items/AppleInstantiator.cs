@@ -28,6 +28,7 @@ public class AppleInstantiator : MonoBehaviour
         GameObject apple = ObjectPool.instance.GetObject("apple");
         if (apple != null)
         {
+            Physics2D.IgnoreCollision(Thief.instance.GetComponent<Collider2D>(), apple.GetComponent<Collider2D>());
             if (ObstacleController.instance.AddCollectable(apple))
             {
                 activeApples++;

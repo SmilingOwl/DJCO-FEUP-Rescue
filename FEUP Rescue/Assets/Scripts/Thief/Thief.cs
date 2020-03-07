@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Thief : MonoBehaviour
 {
+    public static Thief instance;
     public int maxHealth = 100;
     int currentHealth;
     public Animator animator;
@@ -18,13 +19,31 @@ public class Thief : MonoBehaviour
     public Transform attackPoint;
     public LayerMask hero;
 
-    bool dead = false;
+    public Vector3 defaultCentralPos = new Vector3(26f, 0f, 0f);
+    public float defaultDeltaPos = 2f;
+    public Vector3 centralPos;
+    public float deltaPos;
+    public bool dead = false;
+
+    void Awake() {
+        instance = this;
+    }
 
     // Start is called before the first frame update
     void Start()
     {
+        InitThief();
+    }
+
+    public void InitThief() {
         currentHealth = maxHealth;
         dead = false;
+        deltaPos = defaultDeltaPos + GetComponent<SpriteRenderer>().bounds.size.x / 2.0f;
+        centralPos = defaultCentralPos;
+        transform.position = centralPos;
+        GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+        GetComponent<Collider2D>().enabled = true;
+        gameObject.SetActive(true);
     }
 
     public void TakeDamage(int damage)
@@ -45,7 +64,6 @@ public class Thief : MonoBehaviour
         GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
         GetComponent<Collider2D>().enabled = false;
         dead = true;
-        
     }
 
     public void LookAtPlayer()
@@ -69,10 +87,8 @@ public class Thief : MonoBehaviour
 
     public void Attack()
     {
-
         Collider2D[] hitHero = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, hero);
 
-        //make damage
         if (Time.time >= nextAttackTime)
         {
             foreach (Collider2D hero in hitHero)
@@ -84,8 +100,19 @@ public class Thief : MonoBehaviour
     }
     
     void Update() {
-        if(dead){
+        if(dead && gameObject.activeInHierarchy){
             transform.position -= new Vector3(Time.deltaTime * ObstacleController.instance.obstacleVelocity, 0f, 0f);
         }
+        else if(gameObject.activeInHierarchy) {
+            centralPos -= new Vector3(Time.deltaTime * ObstacleController.instance.obstacleVelocity, 0f, 0f);
+        }
+    }
+
+    void OnBecameInvisible() {
+        gameObject.SetActive(false);
+        dead = false;
+        deltaPos = defaultDeltaPos + GetComponent<SpriteRenderer>().bounds.size.x / 2.0f;
+        centralPos = defaultCentralPos;
+        transform.position = centralPos;
     }
 }

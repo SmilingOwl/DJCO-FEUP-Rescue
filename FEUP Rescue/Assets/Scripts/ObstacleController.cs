@@ -30,7 +30,7 @@ public class ObstacleController : MonoBehaviour
     }
 
     public bool AddObstacle(GameObject obstacle) {
-        if(!this.ScreenIsFullObstacles() && this.CanAddObstacle(obstacle)) {
+        if(!this.ScreenIsFullObstacles() && this.CanAddObstacle(obstacle, false)) {
             activeObstacles.Add(obstacle);
             obstacle.SetActive(true);
             Vector3 pos = initialObstaclePosition;
@@ -40,13 +40,21 @@ public class ObstacleController : MonoBehaviour
         return false;
     }
 
-    public bool CanAddObstacle(GameObject obstacle) {
+    public bool CanAddObstacle(GameObject obstacle, bool isThief) {
         
         for(int i = 0; i < activeObstacles.Count; i++) {
             float previousObstaclePosition = activeObstacles[i].GetComponent<SpriteRenderer>().bounds.size.x / 2.0f
                 + activeObstacles[i].transform.position.x;
             float currentPosition = initialObstaclePosition.x - obstacle.GetComponent<SpriteRenderer>().bounds.size.x / 2.0f;
             if(currentPosition - previousObstaclePosition <= spaceBetween) {
+                return false;
+            }
+        }
+        if(!isThief){
+            float thiefPos = Thief.instance.GetComponent<SpriteRenderer>().bounds.size.x / 2.0f
+                + Thief.instance.transform.position.x;
+            float currentPos = initialObstaclePosition.x - obstacle.GetComponent<SpriteRenderer>().bounds.size.x / 2.0f;
+            if(currentPos - thiefPos <= Thief.instance.deltaPos) {
                 return false;
             }
         }
@@ -126,6 +134,10 @@ public class ObstacleController : MonoBehaviour
             {
                 activeCollectables[i].transform.position -= new Vector3(Time.deltaTime * obstacleVelocity, 0f, 0f);
             }
+        }
+
+        if(!Thief.instance.gameObject.activeInHierarchy && this.CanAddObstacle(Thief.instance.gameObject, true)) {
+            Thief.instance.InitThief();
         }
     }
 }
