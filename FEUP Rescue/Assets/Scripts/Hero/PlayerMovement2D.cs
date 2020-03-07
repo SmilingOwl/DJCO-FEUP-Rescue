@@ -29,7 +29,12 @@ public class PlayerMovement2D : MonoBehaviour
         if(GameLogic.instance.isSpeeding()) {
             runSpeedAux *= 2;
         }
-        horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeedAux;
+        horizontalMove = Input.GetAxisRaw("Horizontal");
+        if(horizontalMove < 0) {
+            horizontalMove *= (runSpeedAux + 11f);
+        } else {
+            horizontalMove *= runSpeedAux;
+        }
         animator.SetFloat("speed", Mathf.Abs(horizontalMove));
 
         //JUMP
