@@ -54,7 +54,9 @@ public class GameLogic : MonoBehaviour
 
     public void IncrementPoints() {
         points++;
-        Debug.Log("Points: " + points);
+        ScoreManager.scoreManager.UpdateScore(points);
+        Debug.Log(points);
+
     }
 
     public void IncrementLives() {
