@@ -397,7 +397,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 193675776}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -18.3, y: -2.62, z: 0}
+  m_LocalPosition: {x: -18.3, y: -3.56, z: 0}
   m_LocalScale: {x: 1.3725489, y: 1.2066867, z: 2.1305625}
   m_Children:
   - {fileID: 1869761344}
@@ -967,22 +967,22 @@ BoxCollider2D:
   m_GameObject: {fileID: 739672837}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: f1455f64a4e709b4184f45f3d226e70e, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.34184748, y: 0}
+  m_Offset: {x: -0.04278034, y: -0.2581501}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.72, y: 6.91}
-    newSize: {x: 3.72, y: 6.91}
+    oldSize: {x: 4.37, y: 6.8}
+    newSize: {x: 4.37, y: 6.8}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.615861, y: 6.91}
+  m_Size: {x: 1.8466057, y: 6.3936996}
   m_EdgeRadius: 0
 --- !u!95 &739672839
 Animator:
@@ -1042,15 +1042,15 @@ SpriteRenderer:
   m_SortingLayerID: 683803839
   m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 98019ab7ed1601a4ea686af6edde0e4d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e3566b083669ca54ea19c30718bd0073, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 3.72, y: 6.91}
+  m_Size: {x: 4.37, y: 6.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &739672841
@@ -1061,7 +1061,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 739672837}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.12, y: -2.23, z: 0}
+  m_LocalPosition: {x: 30, y: -2.23, z: 0}
   m_LocalScale: {x: 1.3468862, y: 1.20429, z: 1}
   m_Children:
   - {fileID: 1996132071}
@@ -1111,7 +1111,7 @@ MonoBehaviour:
   hero:
     serializedVersion: 2
     m_Bits: 256
-  defaultCentralPos: {x: 28, y: -2.62, z: 0}
+  defaultCentralPos: {x: 26.5, y: -3.56, z: 0}
   defaultDeltaPos: 10
   centralPos: {x: 0, y: 0, z: 0}
   deltaPos: 0

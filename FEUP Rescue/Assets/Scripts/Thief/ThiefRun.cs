@@ -33,7 +33,7 @@ public class ThiefRun : StateMachineBehaviour
             newPos.x = thief.centralPos.x + thief.deltaPos;
         }
         
-        rb.MovePosition(newPos);
+        //rb.MovePosition(newPos);
 
 
         if(!thief.dead && Vector2.Distance(player.position, rb.position) <= attackRange)

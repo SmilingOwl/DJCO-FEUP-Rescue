@@ -41,7 +41,7 @@ public class Thief : MonoBehaviour
         deltaPos = defaultDeltaPos + GetComponent<SpriteRenderer>().bounds.size.x / 2.0f;
         centralPos = defaultCentralPos;
         transform.position = centralPos;
-        GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+        GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
         GetComponent<Collider2D>().enabled = true;
         gameObject.SetActive(true);
     }
@@ -101,7 +101,7 @@ public class Thief : MonoBehaviour
     
     void Update() {
         
-        if(gameObject.activeInHierarchy && dead) {
+        if(gameObject.activeInHierarchy) {
             transform.position -= new Vector3(Time.deltaTime * ObstacleController.instance.obstacleVelocity, 0f, 0f);
         }
         if(gameObject.activeInHierarchy) {
