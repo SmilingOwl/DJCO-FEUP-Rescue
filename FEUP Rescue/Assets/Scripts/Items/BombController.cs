@@ -7,7 +7,6 @@ public class BombController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
     }
 
     // Update is called once per frame
@@ -28,7 +27,7 @@ public class BombController : MonoBehaviour
         {
             gameObject.SetActive(false);
             BombInstantiator.instance.RemoveBomb(gameObject);
-            // add to ui
+            //add UI
         }
     }
 }
