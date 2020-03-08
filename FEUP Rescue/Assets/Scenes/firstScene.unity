@@ -1631,6 +1631,7 @@ GameObject:
   - component: {fileID: 1285501208}
   - component: {fileID: 1285501209}
   - component: {fileID: 1285501210}
+  - component: {fileID: 1285501211}
   m_Layer: 0
   m_Name: Obstacle Controller
   m_TagString: Untagged
@@ -1751,6 +1752,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeCoffee: 0
+--- !u!114 &1285501211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1285501202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a56da5e2c3f58541956baa5e99cba27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeBomb: 0
 --- !u!1 &1512514071
 GameObject:
   m_ObjectHideFlags: 0
