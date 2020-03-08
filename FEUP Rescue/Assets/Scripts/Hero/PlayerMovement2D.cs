@@ -35,7 +35,7 @@ public class PlayerMovement2D : MonoBehaviour
         } else {
             horizontalMove *= runSpeedAux;
         }
-        Debug.Log(": " + horizontalMove);
+        
         animator.SetFloat("speed", Mathf.Abs(horizontalMove));
 
         //JUMP

@@ -41,7 +41,6 @@ public class Thief : MonoBehaviour
         deltaPos = defaultDeltaPos + GetComponent<SpriteRenderer>().bounds.size.x / 2.0f;
         centralPos = defaultCentralPos;
         transform.position = centralPos;
-        GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
         GetComponent<Collider2D>().enabled = true;
         gameObject.SetActive(true);
     }
@@ -61,7 +60,6 @@ public class Thief : MonoBehaviour
     {
         animator.SetBool("isDead", true);
 
-        GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
         GetComponent<Collider2D>().enabled = false;
         dead = true;
     }
