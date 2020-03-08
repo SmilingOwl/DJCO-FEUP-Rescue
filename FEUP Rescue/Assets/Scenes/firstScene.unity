@@ -1197,7 +1197,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 739672837}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -1232,8 +1232,8 @@ MonoBehaviour:
   hero:
     serializedVersion: 2
     m_Bits: 256
-  defaultCentralPos: {x: 26.5, y: -3.56, z: 0}
-  defaultDeltaPos: 10
+  defaultCentralPos: {x: 28, y: -3.56, z: 0}
+  defaultDeltaPos: 2
   centralPos: {x: 0, y: 0, z: 0}
   deltaPos: 0
   dead: 0
