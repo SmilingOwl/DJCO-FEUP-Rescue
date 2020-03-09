@@ -21,9 +21,17 @@ public class PlayerMovement2D : MonoBehaviour
     float nextAttackTime = 0f;
     public LayerMask enemyLayers;
 
-    // Start is called before the first frame update
     void Update()
     {
+        if(GameLogic.instance.HasGameEnded()) {
+            return;
+        }
+
+        Vector3 screenPos = Camera.main.WorldToScreenPoint(transform.position);
+        if(screenPos.x < 0) {
+            GameLogic.instance.GameOver("You lost the thieves!");
+            return;
+        }
         //RUN
         float runSpeedAux = runSpeed;
         if(GameLogic.instance.isSpeeding()) {

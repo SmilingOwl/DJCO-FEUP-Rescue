@@ -109,6 +109,10 @@ public class Thief : MonoBehaviour
     }
 
     void OnBecameInvisible() {
+        if(!dead) {
+            GameLogic.instance.GameOver("You let a thief escape");
+            return;
+        }
         gameObject.SetActive(false);
         dead = false;
         deltaPos = defaultDeltaPos + GetComponent<SpriteRenderer>().bounds.size.x / 2.0f;

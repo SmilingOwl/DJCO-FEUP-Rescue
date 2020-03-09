@@ -27,8 +27,13 @@ public class StarManager : MonoBehaviour
 
     public void FillStar() {
         defeatedThieves++;
-        if(defeatedThieves > 5)
+        if(GameLogic.instance.HasGameEnded()) {
             return;
+        }
+
+        if(defeatedThieves >= 5) {
+            GameLogic.instance.GameWon();
+        }
         
         stars[defeatedThieves-1].SetActive(true);
     }

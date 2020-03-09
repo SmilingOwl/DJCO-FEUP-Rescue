@@ -45,7 +45,6 @@ public class PlayerHealth : MonoBehaviour
     public void Die()
     {
         animator.SetBool("isDead", true);
-        Debug.Log("YOU DIED!");
-
+        GameLogic.instance.GameOver("You lost your life!");
     }
 }

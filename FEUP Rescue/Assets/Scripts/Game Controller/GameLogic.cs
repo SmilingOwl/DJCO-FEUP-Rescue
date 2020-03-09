@@ -12,8 +12,8 @@ public class GameLogic : MonoBehaviour
     public bool inTimeOut = false;
     float deltaTimeOut = 0f;
     public float maxTimeOut = 1f;
-    int thieves;
-
+    public bool gameOver;
+    public bool gameWon;
 
     void Awake() {
         instance = this;
@@ -22,12 +22,18 @@ public class GameLogic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Init();
+    }
+
+    void Init()
+    {
+        gameOver = false;
+        gameWon = false;
         points = 0;
         speeding = false;
         speedingTime = 0f;
         inTimeOut = false;
         deltaTimeOut = 0f;
-        thieves = 5;
     }
 
     // Update is called once per frame
@@ -69,12 +75,19 @@ public class GameLogic : MonoBehaviour
         inTimeOut = true;
     }
 
-    public void TakeOutThief() {
-        thieves -=1;
+    public void GameOver(string reason) {
+        gameOver = true;
+        Debug.Log("Game Over! " + reason);
     }
 
-    public void GameOver() {
-        //do stuff
-        Debug.Log("Game Over!");
+    public void GameWon() {
+        gameWon = true;
+        Debug.Log("You win!");
+    }
+
+    public bool HasGameEnded() {
+        if(gameWon || gameOver)
+            return true;
+        return false;
     }
 }

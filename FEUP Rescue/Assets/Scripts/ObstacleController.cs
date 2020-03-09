@@ -21,6 +21,10 @@ public class ObstacleController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Init();
+    }
+
+    void Init() {
         activeObstacles = new List<GameObject>();
         activeCollectables = new List<GameObject>();
     }
@@ -30,7 +34,7 @@ public class ObstacleController : MonoBehaviour
     }
 
     public bool AddObstacle(GameObject obstacle) {
-        if(!this.ScreenIsFullObstacles() && this.CanAddObstacle(obstacle, false)) {
+        if(!this.ScreenIsFullObstacles() && this.CanAddObstacle(obstacle, false) && !GameLogic.instance.HasGameEnded()) {
             activeObstacles.Add(obstacle);
             obstacle.SetActive(true);
             Vector3 pos = initialObstaclePosition;
@@ -74,7 +78,7 @@ public class ObstacleController : MonoBehaviour
     }
 
     public bool AddCollectable(GameObject collectable) {
-        if(!this.ScreenIsFullCollectables()) {
+        if(!this.ScreenIsFullCollectables() && !GameLogic.instance.HasGameEnded()) {
             float y_pos = this.CanAddCollectable(collectable);
             if(y_pos == -10f)
                 return false;
@@ -118,7 +122,7 @@ public class ObstacleController : MonoBehaviour
         }
 
         float ypos = initialCollectablePosition.y;
-        if(Random.Range(0, 2) == 0) {
+        if(Random.Range(0, 3) == 0) {
             ypos = 3.3f;
         }
 
