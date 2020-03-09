@@ -1091,7 +1091,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 189.11002, y: 90.94703}
+  m_AnchoredPosition: {x: 180, y: 90.947}
   m_SizeDelta: {x: 141.3, y: 25.17}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &602088110
@@ -1176,8 +1176,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 704229321}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -37.6, y: 10.05, z: 10.4235935}
-  m_LocalScale: {x: 0.735, y: 0.735, z: 0.735}
+  m_LocalPosition: {x: -32.24, y: 9.75, z: 10.4235935}
+  m_LocalScale: {x: 1.6052078, y: 1.4542289, z: 0.735}
   m_Children: []
   m_Father: {fileID: 965050850}
   m_RootOrder: 2
@@ -1257,18 +1257,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.08204818, y: -0.28723335}
+  m_Offset: {x: 0.018320084, y: 0.00059330463}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.12, y: 5.12}
+    oldSize: {x: 1.87, y: 2.7}
     newSize: {x: 5.12, y: 5.12}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.299496, y: 4.545533}
+  m_Size: {x: 1.8505766, y: 2.7363412}
   m_EdgeRadius: 0
 --- !u!1 &739672837
 GameObject:
@@ -2355,7 +2355,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 92.6, y: 92.2}
+  m_AnchoredPosition: {x: 35.4, y: 90.947}
   m_SizeDelta: {x: 24.33, y: 21.32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1534345703
@@ -2428,7 +2428,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.76000214, y: -0.26999998}
+  m_AnchoredPosition: {x: 0.76000214, y: -0.27000046}
   m_SizeDelta: {x: -4.3600235, y: -1.9860001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1647068837

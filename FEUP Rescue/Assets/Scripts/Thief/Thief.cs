@@ -65,24 +65,7 @@ public class Thief : MonoBehaviour
         StarManager.instance.FillStar();
     }
 
-    public void LookAtPlayer()
-    {
-        Vector3 flipped = transform.localScale;
-        flipped.z *= -1f;
 
-        if (transform.position.x > player.position.x && isFlipped)
-        {
-            transform.localScale = flipped;
-            transform.Rotate(0f, 180f, 0f);
-            isFlipped = false;
-        }
-        else if (transform.position.x < player.position.x && !isFlipped)
-        {
-            transform.localScale = flipped;
-            transform.Rotate(0f, 180f, 0f);
-            isFlipped = true;
-        }
-    }
 
     public void Attack()
     {
@@ -118,5 +101,24 @@ public class Thief : MonoBehaviour
         deltaPos = defaultDeltaPos + GetComponent<SpriteRenderer>().bounds.size.x / 2.0f;
         centralPos = defaultCentralPos;
         transform.position = centralPos;
+    }
+
+    public void LookAtPlayer()
+    {
+        Vector3 flipped = transform.localScale;
+        flipped.z *= -1f;
+
+        if (transform.position.x > player.position.x && isFlipped)
+        {
+            transform.localScale = flipped;
+            transform.Rotate(0f, 180f, 0f);
+            isFlipped = false;
+        }
+        else if (transform.position.x < player.position.x && !isFlipped)
+        {
+            transform.localScale = flipped;
+            transform.Rotate(0f, 180f, 0f);
+            isFlipped = true;
+        }
     }
 }
