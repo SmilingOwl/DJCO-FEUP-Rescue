@@ -89,32 +89,40 @@ public class ObstacleController : MonoBehaviour
     }
 
     public float CanAddCollectable(GameObject collectable) {
-        
+        float currentPosition = initialCollectablePosition.x - collectable.GetComponent<SpriteRenderer>().bounds.size.x / 2.0f;
         for(int i = 0; i < activeCollectables.Count; i++) {
             float previousCollectablePosition = activeCollectables[i].GetComponent<SpriteRenderer>().bounds.size.x / 2.0f
                 + activeCollectables[i].transform.position.x;
-            float currentPosition = initialCollectablePosition.x - collectable.GetComponent<SpriteRenderer>().bounds.size.x / 2.0f;
             if(currentPosition - previousCollectablePosition <= spaceBetweenCollectables) {
                 return -10f;
             }
         }
 
         for(int i = 0; i < activeObstacles.Count; i++) {
-            float obstacleInitPosition = - activeObstacles[i].GetComponent<SpriteRenderer>().bounds.size.x / 2.0f
-                + activeObstacles[i].transform.position.x;
-            float obstaclePosition = activeObstacles[i].GetComponent<SpriteRenderer>().bounds.size.x / 2.0f
-                + activeObstacles[i].transform.position.x;
-            float currentPosition = initialCollectablePosition.x - collectable.GetComponent<SpriteRenderer>().bounds.size.x / 2.0f;
-            float currentFinPosition = initialCollectablePosition.x + collectable.GetComponent<SpriteRenderer>().bounds.size.x / 2.0f;
-            if(!(currentFinPosition < obstacleInitPosition - 2f || currentPosition > obstaclePosition + 2f)) {
-                if(activeObstacles[i].tag == "Trap"){
-                    return -10f;
+            if(activeObstacles[i].tag == "Trap" || activeObstacles[i].tag == "Dustbin"){
+                float obstacleInitPosition = - activeObstacles[i].GetComponent<SpriteRenderer>().bounds.size.x / 2.0f
+                    + activeObstacles[i].transform.position.x;
+                float obstaclePosition = activeObstacles[i].GetComponent<SpriteRenderer>().bounds.size.x / 2.0f
+                    + activeObstacles[i].transform.position.x;
+                float currentFinPosition = initialCollectablePosition.x + collectable.GetComponent<SpriteRenderer>().bounds.size.x / 2.0f;
+                if(!(currentFinPosition < obstacleInitPosition - 2f || currentPosition > obstaclePosition + 2f)) {
+                    return 3.3f;
                 }
-                return 3.3f;
             }
         }
 
-        return initialCollectablePosition.y;
+        float thiefPos = Thief.instance.GetComponent<SpriteRenderer>().bounds.size.x / 2.0f
+            + Thief.instance.transform.position.x;
+        if(currentPosition - thiefPos <= Thief.instance.deltaPos) {
+            return 3.3f;
+        }
+
+        float ypos = initialCollectablePosition.y;
+        if(Random.Range(0, 2) == 0) {
+            ypos = 3.3f;
+        }
+
+        return ypos;
     }
 
     // Update is called once per frame
@@ -136,7 +144,7 @@ public class ObstacleController : MonoBehaviour
             }
         }
 
-        if(!Thief.instance.gameObject.activeInHierarchy && this.CanAddObstacle(Thief.instance.gameObject, true)) {
+        if(!Thief.instance.gameObject.activeInHierarchy && this.CanAddObstacle(Thief.instance.gameObject, true) && Random.Range(0, 100) == 0) {
             Thief.instance.InitThief();
         }
     }

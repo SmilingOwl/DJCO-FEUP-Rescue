@@ -22,9 +22,8 @@ public class PcController : MonoBehaviour
         PcInstantiator.instance.RemovePc(gameObject);
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(collision.gameObject.tag == "Hero") {
+    void OnTriggerEnter2D(Collider2D collider) {
+         if(collider.gameObject.tag == "Hero") {
             gameObject.SetActive(false);
             PcInstantiator.instance.RemovePc(gameObject);
             GameLogic.instance.IncrementPoints();

@@ -22,9 +22,9 @@ public class CoffeeController : MonoBehaviour
         CoffeeInstantiator.instance.RemoveCoffee(gameObject);
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D collider)
     {
-        if(collision.gameObject.tag == "Hero") {
+        if(collider.gameObject.tag == "Hero") {
             gameObject.SetActive(false);
             CoffeeInstantiator.instance.RemoveCoffee(gameObject);
             GameLogic.instance.SpeedUp();

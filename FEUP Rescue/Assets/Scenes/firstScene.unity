@@ -368,7 +368,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -574,7 +574,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.2, y: 0.667789}
+  m_Offset: {x: -0.04682803, y: 0.667789}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -585,7 +585,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.1, y: 5}
+  m_Size: {x: 2.6063437, y: 5}
   m_EdgeRadius: 0
 --- !u!95 &193675779
 Animator:
@@ -801,7 +801,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.1870668, y: -2.4796908}
@@ -2092,7 +2092,7 @@ MonoBehaviour:
   obstacleVelocity: 10.3
   activeObstacles: []
   activeCollectables: []
-  initialObstaclePosition: {x: 28.5, y: -6, z: 0}
+  initialObstaclePosition: {x: 30, y: -6, z: 0}
   initialCollectablePosition: {x: 28, y: -2.5, z: 0}
   spaceBetween: 5
   spaceBetweenCollectables: 0.5
@@ -2355,7 +2355,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 225.9, y: 92.872}
+  m_AnchoredPosition: {x: 92.6, y: 92.2}
   m_SizeDelta: {x: 24.33, y: 21.32}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1534345703
@@ -2656,7 +2656,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.0000052452087, y: 0.23458147}
@@ -3443,7 +3443,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.17398596, y: -0.9727328}

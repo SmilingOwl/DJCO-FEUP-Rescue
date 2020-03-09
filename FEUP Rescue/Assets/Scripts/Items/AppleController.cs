@@ -23,12 +23,12 @@ public class AppleController : MonoBehaviour
     }
 
     
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D collider)
     {
-        if(collision.gameObject.tag == "Hero") {
+        if(collider.gameObject.tag == "Hero") {
             gameObject.SetActive(false);
             AppleInstantiator.instance.RemoveApple(gameObject);
-            collision.gameObject.GetComponent<PlayerHealth>().GetLife();
+            collider.gameObject.GetComponent<PlayerHealth>().GetLife();
         }
     }
 }
