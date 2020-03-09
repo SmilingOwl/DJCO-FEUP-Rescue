@@ -12,6 +12,7 @@ public class GameLogic : MonoBehaviour
     public bool inTimeOut = false;
     float deltaTimeOut = 0f;
     public float maxTimeOut = 1f;
+    int thieves;
 
 
     void Awake() {
@@ -26,6 +27,7 @@ public class GameLogic : MonoBehaviour
         speedingTime = 0f;
         inTimeOut = false;
         deltaTimeOut = 0f;
+        thieves = 5;
     }
 
     // Update is called once per frame
@@ -65,6 +67,10 @@ public class GameLogic : MonoBehaviour
 
     public void setTimeOut() {
         inTimeOut = true;
+    }
+
+    public void TakeOutThief() {
+        thieves -=1;
     }
 
     public void GameOver() {
