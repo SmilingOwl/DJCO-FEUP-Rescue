@@ -23,15 +23,12 @@ public class BombManager : MonoBehaviour
         isBombActive = true;
     }
 
-    void UseBomb() {
-        bomb.SetActive(false);
-        isBombActive = false;
-    }
-
     void Update() {
         if (isBombActive && Input.GetKeyDown(KeyCode.B))
         {
-            UseBomb();
+            bomb.SetActive(false);
+            isBombActive = false;
+            BombAttack.instance.Attack();
         }
     }
 }

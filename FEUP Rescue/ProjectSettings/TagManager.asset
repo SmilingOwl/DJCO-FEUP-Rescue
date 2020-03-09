@@ -11,6 +11,10 @@ TagManager:
   - Apple
   - Coffe
   - Hero
+  - Bomb
+  - AttackBomb
+  - Thief
+  - Floor
   layers:
   - Default
   - TransparentFX
