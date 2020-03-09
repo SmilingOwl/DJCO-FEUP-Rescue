@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class BombInstantiator : MonoBehaviour
 {
-    public int activeBomb = 0;
+    int activeBomb;
     public static BombInstantiator instance;
+    bool appeared;
 
     void Awake()
     {
@@ -16,6 +17,7 @@ public class BombInstantiator : MonoBehaviour
     void Start()
     {
         activeBomb = 0;
+        appeared = false;
     }
 
     public void RemoveBomb(GameObject collectable)
@@ -33,6 +35,7 @@ public class BombInstantiator : MonoBehaviour
             if (ObstacleController.instance.AddCollectable(bomb))
             {
                 activeBomb++;
+                appeared = true;
             }
         }
     }
@@ -40,7 +43,7 @@ public class BombInstantiator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (activeBomb < ObjectPool.instance.bombAmount && Random.Range(0, 400) == 0)
+        if (!appeared && activeBomb < ObjectPool.instance.bombAmount && Random.Range(0, 1000) == 0)
         {
             this.AddBomb();
         }

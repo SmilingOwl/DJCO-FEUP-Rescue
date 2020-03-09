@@ -441,12 +441,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 96563007}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -29.49, y: 1.06, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -24.59348, y: 1.0521812, z: 7.559949}
   m_LocalScale: {x: 0.216, y: 0.18, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_Father: {fileID: 1217345008}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &150571625
 GameObject:
@@ -1383,7 +1383,7 @@ SpriteRenderer:
   m_Size: {x: 4.37, y: 6.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &739672841
@@ -1570,7 +1570,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &833593796
 GameObject:
@@ -2021,9 +2021,55 @@ Transform:
   - {fileID: 1718945283}
   - {fileID: 415765691}
   - {fileID: 2021710673}
+  - {fileID: 96563011}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1253739565
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1253739566}
+  - component: {fileID: 1253739567}
+  m_Layer: 0
+  m_Name: BombManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1253739566
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1253739565}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.733047, y: -0.843721, z: -10.4235935}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1253739567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1253739565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 818f691bdbb31504c9b4ea66b14d5403, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bomb: {fileID: 1534345701}
+  isBombActive: 0
 --- !u!1 &1285501202
 GameObject:
   m_ObjectHideFlags: 0
@@ -2173,7 +2219,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a56da5e2c3f58541956baa5e99cba27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeBomb: 0
 --- !u!1 &1467144355
 GameObject:
   m_ObjectHideFlags: 0
@@ -2333,12 +2378,12 @@ GameObject:
   - component: {fileID: 1534345704}
   - component: {fileID: 1534345703}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Bomb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1534345702
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2355,8 +2400,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 35.4, y: 90.947}
-  m_SizeDelta: {x: 24.33, y: 21.32}
+  m_AnchoredPosition: {x: 85.3, y: 92.2}
+  m_SizeDelta: {x: 20.74, y: 21.78}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1534345703
 MonoBehaviour:
@@ -2371,7 +2416,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4433962, g: 0.4433962, b: 0.4433962, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -3227,6 +3272,8 @@ MonoBehaviour:
   maxSpeedingTime: 4
   inTimeOut: 0
   maxTimeOut: 0.5
+  gameOver: 0
+  gameWon: 0
 --- !u!1 &1961183157
 GameObject:
   m_ObjectHideFlags: 0
