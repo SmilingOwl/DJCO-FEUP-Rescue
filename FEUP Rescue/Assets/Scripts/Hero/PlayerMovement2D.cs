@@ -88,7 +88,12 @@ public class PlayerMovement2D : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
+        Vector3 screenPos = Camera.main.WorldToScreenPoint(transform.position);
+        if(screenPos.x < 60 + GetComponent<SpriteRenderer>().bounds.size.x && horizontalMove < 0
+            || screenPos.x > Screen.width-horizontalMove - GetComponent<SpriteRenderer>().bounds.size.x/2.0f && horizontalMove > 0) {
+            horizontalMove = 0;
+        }
+        controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);        
         jump = false;
     }
 }
