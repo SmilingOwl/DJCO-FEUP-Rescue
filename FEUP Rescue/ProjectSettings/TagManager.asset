@@ -70,3 +70,6 @@ TagManager:
   - name: Thief
     uniqueID: 683803839
     locked: 0
+  - name: Attack
+    uniqueID: 2809654445
+    locked: 0
