@@ -97,6 +97,9 @@ public class PlayerMovement2D : MonoBehaviour
             || screenPos.x > Screen.width-horizontalMove - GetComponent<SpriteRenderer>().bounds.size.x/2.0f && horizontalMove > 0) {
             horizontalMove = 0;
         }
+        if(horizontalMove == 0) {
+            gameObject.transform.position -= new Vector3(ObstacleController.instance.obstacleVelocity * Time.deltaTime, 0f, 0f);
+        }
         controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);        
         jump = false;
     }
