@@ -54,9 +54,6 @@ public class ObstacleController : MonoBehaviour
                 currentPosition = Thief.instance.defaultCentralPos.x - 2f;
             }
             if(currentPosition - previousObstaclePosition <= spaceBetween) {
-                if(isThief)
-                    Debug.Log(currentPosition + " - " + previousObstaclePosition + " = " + (currentPosition - previousObstaclePosition)
-                        + " <= " + spaceBetween);
                 return false;
             }
         }
@@ -68,8 +65,6 @@ public class ObstacleController : MonoBehaviour
                 return false;
             }
         }
-        if(isThief)
-            Debug.Log(true);
         return true;
     }
 
@@ -156,7 +151,7 @@ public class ObstacleController : MonoBehaviour
             }
         }
 
-        if(!Thief.instance.gameObject.activeInHierarchy && Random.Range(0, 500) == 0 && this.CanAddObstacle(Thief.instance.gameObject, true)) {
+        if(!Thief.instance.gameObject.activeInHierarchy && Random.Range(0, 800) == 0 && this.CanAddObstacle(Thief.instance.gameObject, true)) {
             Thief.instance.InitThief();
         }
     }

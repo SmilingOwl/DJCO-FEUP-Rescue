@@ -1458,9 +1458,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   defaultCentralPos: {x: 30, y: -3.56, z: 0}
-  defaultDeltaPos: 2
   centralPos: {x: 0, y: 0, z: 0}
-  deltaPos: 0
   dead: 0
 --- !u!1 &743098127
 GameObject:
@@ -2146,7 +2144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b953c9ff8a93f9947aac96feacce77df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacleAmount: 5
+  obstacleAmount: 4
   collectableAmount: 10
   obstacleVelocity: 10.3
   activeObstacles: []
@@ -3249,8 +3247,8 @@ MonoBehaviour:
   apple: {fileID: 415765687}
   coffee: {fileID: 2021710670}
   bomb: {fileID: 96563007}
-  pcAmount: 6
-  benchAmount: 3
+  pcAmount: 8
+  benchAmount: 2
   trapAmount: 3
   dustbinAmount: 3
   appleAmount: 1
