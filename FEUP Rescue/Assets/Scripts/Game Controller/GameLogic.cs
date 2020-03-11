@@ -43,6 +43,7 @@ public class GameLogic : MonoBehaviour
             speedingTime += Time.deltaTime;
             if(speedingTime >= maxSpeedingTime)
             {
+                PlayerMovement2D.instance.SetSpeeding(false);
                 speeding = false;
                 speedingTime = 0f;
             }
@@ -63,6 +64,7 @@ public class GameLogic : MonoBehaviour
     }
 
     public void SpeedUp() {
+        PlayerMovement2D.instance.SetSpeeding(true);
         speeding = true;
         speedingTime = 0f;
     }

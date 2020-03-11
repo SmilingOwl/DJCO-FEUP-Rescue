@@ -20,6 +20,12 @@ public class PlayerMovement2D : MonoBehaviour
     public float attackRate = 2f;
     float nextAttackTime = 0f;
     public LayerMask enemyLayers;
+    public Behaviour halo;
+    public static PlayerMovement2D instance;
+
+    void Awake() {
+        instance = this;
+    }
 
     void Update()
     {
@@ -81,6 +87,14 @@ public class PlayerMovement2D : MonoBehaviour
         foreach(Collider2D enemy in hitEnemies)
         {
             enemy.GetComponent<Thief>().TakeDamage(attackDamage);
+        }
+    }
+
+    public void SetSpeeding(bool speeding) {
+        if(speeding) {
+            halo.enabled = true;
+        } else {
+            halo.enabled = false;
         }
     }
 
