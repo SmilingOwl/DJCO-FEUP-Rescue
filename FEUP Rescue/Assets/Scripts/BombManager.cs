@@ -24,7 +24,7 @@ public class BombManager : MonoBehaviour
     }
 
     void Update() {
-        if (isBombActive && Input.GetKeyDown(KeyCode.B))
+        if (isBombActive && Input.GetKeyDown(KeyCode.B) && Thief.instance.gameObject.activeInHierarchy && ! Thief.instance.dead)
         {
             bomb.SetActive(false);
             isBombActive = false;
