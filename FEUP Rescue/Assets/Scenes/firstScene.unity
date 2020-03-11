@@ -1270,7 +1270,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.08209753, y: -0.33605188}
+  m_Offset: {x: 1.3993225, y: -0.23416018}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1281,7 +1281,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.8589168, y: 4.2382946}
+  m_Size: {x: 9.192024, y: 9.740545}
   m_EdgeRadius: 0
 --- !u!1 &739672837
 GameObject:
@@ -1457,7 +1457,7 @@ MonoBehaviour:
   hero:
     serializedVersion: 2
     m_Bits: 256
-  defaultCentralPos: {x: 28, y: -3.56, z: 0}
+  defaultCentralPos: {x: 30, y: -3.56, z: 0}
   defaultDeltaPos: 2
   centralPos: {x: 0, y: 0, z: 0}
   deltaPos: 0
@@ -3250,9 +3250,9 @@ MonoBehaviour:
   coffee: {fileID: 2021710670}
   bomb: {fileID: 96563007}
   pcAmount: 6
-  benchAmount: 2
-  trapAmount: 2
-  dustbinAmount: 2
+  benchAmount: 3
+  trapAmount: 3
+  dustbinAmount: 3
   appleAmount: 1
   coffeeAmount: 1
   bombAmount: 1

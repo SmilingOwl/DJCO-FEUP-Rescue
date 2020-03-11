@@ -19,10 +19,8 @@ public class Thief : MonoBehaviour
     public Transform attackPoint;
     public LayerMask hero;
 
-    public Vector3 defaultCentralPos = new Vector3(26f, 0f, 0f);
-    public float defaultDeltaPos = 2f;
+    public Vector3 defaultCentralPos = new Vector3(30f, 0f, 0f);
     public Vector3 centralPos;
-    public float deltaPos;
     public bool dead = false;
 
     void Awake() {
@@ -38,7 +36,6 @@ public class Thief : MonoBehaviour
     public void InitThief() {
         currentHealth = maxHealth;
         dead = false;
-        deltaPos = defaultDeltaPos + GetComponent<SpriteRenderer>().bounds.size.x / 2.0f;
         centralPos = defaultCentralPos;
         transform.position = centralPos;
         GetComponent<Collider2D>().enabled = true;
@@ -96,11 +93,9 @@ public class Thief : MonoBehaviour
             GameLogic.instance.GameOver("You let a thief escape");
             return;
         }
+        
         gameObject.SetActive(false);
         dead = false;
-        deltaPos = defaultDeltaPos + GetComponent<SpriteRenderer>().bounds.size.x / 2.0f;
-        centralPos = defaultCentralPos;
-        transform.position = centralPos;
     }
 
     public void LookAtPlayer()

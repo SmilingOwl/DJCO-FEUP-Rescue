@@ -33,7 +33,7 @@ public class DustbinInstantiator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(activeDustbins < ObjectPool.instance.dustbinAmount && Random.Range(0, 500) == 0) {
+        if(activeDustbins < ObjectPool.instance.dustbinAmount && Random.Range(0, 200) == 0) {
             this.AddDustbin();
         }
     }

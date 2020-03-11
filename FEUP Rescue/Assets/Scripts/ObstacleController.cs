@@ -50,7 +50,13 @@ public class ObstacleController : MonoBehaviour
             float previousObstaclePosition = activeObstacles[i].GetComponent<SpriteRenderer>().bounds.size.x / 2.0f
                 + activeObstacles[i].transform.position.x;
             float currentPosition = initialObstaclePosition.x - obstacle.GetComponent<SpriteRenderer>().bounds.size.x / 2.0f;
+            if(isThief) {
+                currentPosition = Thief.instance.defaultCentralPos.x - 2f;
+            }
             if(currentPosition - previousObstaclePosition <= spaceBetween) {
+                if(isThief)
+                    Debug.Log(currentPosition + " - " + previousObstaclePosition + " = " + (currentPosition - previousObstaclePosition)
+                        + " <= " + spaceBetween);
                 return false;
             }
         }
@@ -58,10 +64,12 @@ public class ObstacleController : MonoBehaviour
             float thiefPos = Thief.instance.GetComponent<SpriteRenderer>().bounds.size.x / 2.0f
                 + Thief.instance.transform.position.x;
             float currentPos = initialObstaclePosition.x - obstacle.GetComponent<SpriteRenderer>().bounds.size.x / 2.0f;
-            if(currentPos - thiefPos <= Thief.instance.deltaPos) {
+            if(currentPos - thiefPos <= spaceBetween) {
                 return false;
             }
         }
+        if(isThief)
+            Debug.Log(true);
         return true;
     }
 
@@ -117,7 +125,7 @@ public class ObstacleController : MonoBehaviour
 
         float thiefPos = Thief.instance.GetComponent<SpriteRenderer>().bounds.size.x / 2.0f
             + Thief.instance.transform.position.x;
-        if(currentPosition - thiefPos <= Thief.instance.deltaPos) {
+        if(currentPosition - thiefPos <= spaceBetween) {
             return 3.3f;
         }
 
@@ -148,7 +156,7 @@ public class ObstacleController : MonoBehaviour
             }
         }
 
-        if(!Thief.instance.gameObject.activeInHierarchy && this.CanAddObstacle(Thief.instance.gameObject, true) && Random.Range(0, 100) == 0) {
+        if(!Thief.instance.gameObject.activeInHierarchy && Random.Range(0, 500) == 0 && this.CanAddObstacle(Thief.instance.gameObject, true)) {
             Thief.instance.InitThief();
         }
     }
