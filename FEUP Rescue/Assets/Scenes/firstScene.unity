@@ -894,7 +894,7 @@ MonoBehaviour:
   appleValue: 10
   animator: {fileID: 193675779}
   healthBar: {fileID: 90660086}
-  halo: {fileID: 0}
+  halo: {fileID: 193675786}
 --- !u!122 &193675786
 Halo:
   m_ObjectHideFlags: 0
