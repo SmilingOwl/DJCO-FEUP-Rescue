@@ -3421,7 +3421,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a58ff9f6a2cd1440b3fa46e9a43a533, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxProtectedTime: 4
+  maxProtectedTime: 3
   maxSpeedingTime: 4
   inTimeOut: 0
   maxTimeOut: 0.5
