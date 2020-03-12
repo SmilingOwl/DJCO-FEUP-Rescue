@@ -34,7 +34,7 @@ public class TrapInstantiator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(activeTraps < ObjectPool.instance.trapAmount && Random.Range(0, 200) == 0) {
+        if(activeTraps < ObjectPool.instance.trapAmount && Random.Range(0, 100) == 0) {
             this.AddTrap();
         }
     }
