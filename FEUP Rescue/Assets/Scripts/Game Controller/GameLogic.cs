@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameLogic : MonoBehaviour
 {
     public static GameLogic instance;
+    public GameObject GameOverMenu;
     int points = 0;
     bool speeding = false;
     bool protectedShield = false;
@@ -15,7 +16,7 @@ public class GameLogic : MonoBehaviour
     public bool inTimeOut = false;
     float deltaTimeOut = 0f;
     public float maxTimeOut = 1f;
-    public bool gameOver;
+    public bool gameOverbool;
     public bool gameWon;
 
     void Awake() {
@@ -30,7 +31,7 @@ public class GameLogic : MonoBehaviour
 
     void Init()
     {
-        gameOver = false;
+        gameOverbool = false;
         gameWon = false;
         points = 0;
         speeding = false;
@@ -102,8 +103,9 @@ public class GameLogic : MonoBehaviour
     }
 
     public void GameOver(string reason) {
-        gameOver = true;
+        gameOverbool = true;
         Debug.Log("Game Over! " + reason);
+        GameOverMenu.SetActive(true);
     }
 
     public void GameWon() {
@@ -112,7 +114,7 @@ public class GameLogic : MonoBehaviour
     }
 
     public bool HasGameEnded() {
-        if(gameWon || gameOver)
+        if(gameWon || gameOverbool)
             return true;
         return false;
     }
