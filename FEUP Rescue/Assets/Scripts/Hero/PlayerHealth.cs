@@ -10,7 +10,9 @@ public class PlayerHealth : MonoBehaviour
     public Animator animator;
     public HealthBar healthBar;
     bool dead = false;
-
+    public Behaviour halo;
+    public static PlayerHealth instance;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -21,20 +23,29 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        if(!GameLogic.instance.inTimeOut && !dead){
-            GameLogic.instance.setTimeOut();
-            currentHealth -= damage;
-            healthBar.SetHealth(currentHealth);
-            animator.SetTrigger("Hurt");
+        if(!GameLogic.instance.isProtected()){
+            if(!GameLogic.instance.inTimeOut && !dead){
+                GameLogic.instance.setTimeOut();
+                currentHealth -= damage;
+                healthBar.SetHealth(currentHealth);
+                animator.SetTrigger("Hurt");
 
-            if (currentHealth <= 0)
-            {
-                dead = true;
-                Die();
+                if (currentHealth <= 0)
+                {
+                    dead = true;
+                    Die();
+                }
             }
         }
     }
 
+    public void SetProtected(bool protectedShield) {
+        if(protectedShield) {
+            halo.enabled = true;
+        } else {
+            halo.enabled = false;
+        }
+    }
     public void GetLife() {
         currentHealth += appleValue;
         if(currentHealth >= 100)

@@ -102,6 +102,7 @@ public class PlayerMovement2D : MonoBehaviour
         }
     }
 
+
     public void OnLanding()
     {
         animator.SetBool("isJumping", false);

@@ -7,6 +7,9 @@ public class GameLogic : MonoBehaviour
     public static GameLogic instance;
     int points = 0;
     bool speeding = false;
+    bool protectedShield = false;
+    float protectedTime = 0f;
+    public float maxProtectedTime = 4f;
     float speedingTime = 0f;
     public float maxSpeedingTime = 4f;
     public bool inTimeOut = false;
@@ -32,6 +35,8 @@ public class GameLogic : MonoBehaviour
         points = 0;
         speeding = false;
         speedingTime = 0f;
+        protectedShield = false;
+        protectedTime = 0f;
         inTimeOut = false;
         deltaTimeOut = 0f;
     }
@@ -46,6 +51,14 @@ public class GameLogic : MonoBehaviour
                 PlayerMovement2D.instance.SetSpeeding(false);
                 speeding = false;
                 speedingTime = 0f;
+            }
+        }
+        if(protectedShield){
+            protectedTime += Time.deltaTime;
+            if(protectedTime >= maxProtectedTime){
+                PlayerHealth.instance.SetProtected(false);
+                protectedShield = false;
+                protectedTime = 0f;
             }
         }
         if(inTimeOut) {
@@ -71,6 +84,16 @@ public class GameLogic : MonoBehaviour
 
     public bool isSpeeding() {
         return speeding;
+    }
+
+    public bool isProtected(){
+        return protectedShield;
+    }
+
+    public void ProtectedWithShield(){
+        PlayerHealth.instance.SetProtected(true);
+        protectedShield = true;
+        protectedTime = 0f;
     }
 
     public void setTimeOut() {
