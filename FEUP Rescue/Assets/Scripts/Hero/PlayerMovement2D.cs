@@ -73,6 +73,10 @@ public class PlayerMovement2D : MonoBehaviour
         {
             crouch = false;
         }
+        
+        if(horizontalMove == 0 && screenPos.x >= 30 + GetComponent<SpriteRenderer>().bounds.size.x) {
+            gameObject.transform.position -= new Vector3(ObstacleController.instance.obstacleVelocity * Time.deltaTime, 0f, 0f);
+        }
     }
 
     public void Attack()
@@ -110,9 +114,6 @@ public class PlayerMovement2D : MonoBehaviour
         if(screenPos.x < 60 + GetComponent<SpriteRenderer>().bounds.size.x && horizontalMove < 0
             || screenPos.x > Screen.width-horizontalMove - GetComponent<SpriteRenderer>().bounds.size.x/2.0f && horizontalMove > 0) {
             horizontalMove = 0;
-        }
-        if(horizontalMove == 0 && screenPos.x >= 30 + GetComponent<SpriteRenderer>().bounds.size.x) {
-            gameObject.transform.position -= new Vector3(ObstacleController.instance.obstacleVelocity * Time.deltaTime, 0f, 0f);
         }
         controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
         jump = false;
