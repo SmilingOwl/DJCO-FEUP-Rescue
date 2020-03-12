@@ -27,7 +27,7 @@ public class ShieldController : MonoBehaviour
         if(collider.gameObject.tag == "Hero") {
             gameObject.SetActive(false);
             ShieldInstantiator.instance.RemoveShield(gameObject);
-            //GameLogic.instance.SpeedUp();
+            GameLogic.instance.ProtectedWithShield();
         }
     }
 }

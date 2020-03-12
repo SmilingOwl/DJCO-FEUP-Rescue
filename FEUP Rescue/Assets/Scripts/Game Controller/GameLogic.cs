@@ -9,7 +9,7 @@ public class GameLogic : MonoBehaviour
     bool speeding = false;
     bool protectedShield = false;
     float protectedTime = 0f;
-    public float maxProtectedTime = 4f;
+    public float maxProtectedTime = 2f;
     float speedingTime = 0f;
     public float maxSpeedingTime = 4f;
     public bool inTimeOut = false;
@@ -94,6 +94,7 @@ public class GameLogic : MonoBehaviour
         PlayerHealth.instance.SetProtected(true);
         protectedShield = true;
         protectedTime = 0f;
+        Debug.Log("entered Shield");
     }
 
     public void setTimeOut() {

@@ -12,6 +12,10 @@ public class PlayerHealth : MonoBehaviour
     bool dead = false;
     public Behaviour halo;
     public static PlayerHealth instance;
+
+    void Awake() {
+        instance = this;
+    }
     
     // Start is called before the first frame update
     void Start()
