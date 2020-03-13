@@ -6,6 +6,7 @@ public class GameLogic : MonoBehaviour
 {
     public static GameLogic instance;
     public GameObject GameOverMenu;
+    public GameObject VictoryMenu;
     int points = 0;
     bool speeding = false;
     bool protectedShield = false;
@@ -111,6 +112,7 @@ public class GameLogic : MonoBehaviour
     public void GameWon() {
         gameWon = true;
         Debug.Log("You win!");
+        VictoryMenu.SetActive(true);
     }
 
     public bool HasGameEnded() {
