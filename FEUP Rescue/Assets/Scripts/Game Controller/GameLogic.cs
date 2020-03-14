@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class GameLogic : MonoBehaviour
 {
@@ -21,6 +23,9 @@ public class GameLogic : MonoBehaviour
     public float maxTimeOut = 1f;
     public bool gameOverbool;
     public bool gameWon;
+    bool caughtBomb;
+    public TextMeshProUGUI score;
+    
 
     void Awake() {
         instance = this;
@@ -44,6 +49,7 @@ public class GameLogic : MonoBehaviour
         inTimeOut = false;
         deltaTimeOut = 0f;
         GameIsPaused = false;
+        caughtBomb = false;
     }
 
     // Update is called once per frame
@@ -61,7 +67,8 @@ public class GameLogic : MonoBehaviour
                 Debug.Log("Carregou P");
                 Pause();
             }
-        }        if (speeding) {
+        }
+        if (speeding) {
             speedingTime += Time.deltaTime;
             if(speedingTime >= maxSpeedingTime)
             {
@@ -99,6 +106,10 @@ public class GameLogic : MonoBehaviour
         speedingTime = 0f;
     }
 
+    public void CaughtBomb() {
+        caughtBomb = true;
+    }
+
     public bool isSpeeding() {
         return speeding;
     }
@@ -123,9 +134,18 @@ public class GameLogic : MonoBehaviour
         GameOverMenu.SetActive(true);
     }
 
+    public void GetScore() {
+        int bomb = 0;
+        if(caughtBomb)
+            bomb = 10;
+        
+        score.text = "" + (points + bomb + Timer.instance.GetTimerPoints());
+    }
+
     public void GameWon() {
         gameWon = true;
         Debug.Log("You win!");
+        this.GetScore();
         VictoryMenu.SetActive(true);
     }
 

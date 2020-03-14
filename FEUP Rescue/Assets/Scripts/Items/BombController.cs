@@ -28,6 +28,7 @@ public class BombController : MonoBehaviour
             gameObject.SetActive(false);
             BombInstantiator.instance.RemoveBomb(gameObject);
             BombManager.instance.ActivateBomb();
+            GameLogic.instance.CaughtBomb();
         }
     }
 }
