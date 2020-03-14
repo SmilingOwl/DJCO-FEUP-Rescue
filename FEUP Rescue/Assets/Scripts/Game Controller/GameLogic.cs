@@ -111,7 +111,6 @@ public class GameLogic : MonoBehaviour
         PlayerHealth.instance.SetProtected(true);
         protectedShield = true;
         protectedTime = 0f;
-        Debug.Log("entered Shield");
     }
 
     public void setTimeOut() {
