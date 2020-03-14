@@ -1,1 +1,1 @@
-# DJCO-FEUP-Runner
+# DJCO-FEUP-Rescue
