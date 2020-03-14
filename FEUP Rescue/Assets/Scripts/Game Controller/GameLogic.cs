@@ -7,6 +7,8 @@ public class GameLogic : MonoBehaviour
     public static GameLogic instance;
     public GameObject GameOverMenu;
     public GameObject VictoryMenu;
+    public bool GameIsPaused;
+    public GameObject PauseMenu;
     int points = 0;
     bool speeding = false;
     bool protectedShield = false;
@@ -41,12 +43,25 @@ public class GameLogic : MonoBehaviour
         protectedTime = 0f;
         inTimeOut = false;
         deltaTimeOut = 0f;
+        GameIsPaused = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(speeding) {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (GameIsPaused)
+            {
+                Debug.Log("Carregou R");
+                Resume();
+            }
+            else
+            {
+                Debug.Log("Carregou P");
+                Pause();
+            }
+        }        if (speeding) {
             speedingTime += Time.deltaTime;
             if(speedingTime >= maxSpeedingTime)
             {
@@ -119,5 +134,19 @@ public class GameLogic : MonoBehaviour
         if(gameWon || gameOverbool)
             return true;
         return false;
+    }
+
+    void Resume()
+    {
+        PauseMenu.SetActive(false);
+        Time.timeScale = 1f;
+        GameIsPaused = false;
+    }
+
+    void Pause()
+    {
+        PauseMenu.SetActive(true);
+        Time.timeScale = 0f;
+        GameIsPaused = true;
     }
 }
