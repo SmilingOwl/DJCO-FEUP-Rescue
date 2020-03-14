@@ -984,7 +984,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -856921799
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3f985f4090ceda84a8cdfaa40ea7e8ee, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1329,8 +1329,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -2.956, y: -0.769}
+  m_AnchoredPosition: {x: 0.00000071525574, y: 0.00012457371}
+  m_SizeDelta: {x: -0, y: -0.00025082}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &319843094
 MonoBehaviour:
@@ -1470,7 +1470,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1934791075
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7ed5592456d7f2245a4efd06d71ecf02, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2005,8 +2005,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -1.255, y: -0.582}
+  m_AnchoredPosition: {x: -0.00012516975, y: -0.00000023841858}
+  m_SizeDelta: {x: -0.00024986, y: -0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &673494595
 MonoBehaviour:
@@ -2268,7 +2268,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 683803839
-  m_SortingLayer: 6
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: e9eeac2ac007a964e9b7a23e0b8cc5da, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2731,7 +2731,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 53.413734, y: -70.33298}
+  m_AnchoredPosition: {x: 44.3, y: -44.23}
   m_SizeDelta: {x: 7.613, y: 2.73}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &916746433
@@ -2759,7 +2759,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -3646,6 +3646,7 @@ GameObject:
   - component: {fileID: 1348015151}
   - component: {fileID: 1348015150}
   - component: {fileID: 1348015149}
+  - component: {fileID: 1348015152}
   m_Layer: 5
   m_Name: Quit
   m_TagString: Untagged
@@ -3715,7 +3716,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1348015150}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1348015152}
+        m_MethodName: QuitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1348015150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3752,6 +3764,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1348015147}
   m_CullTransparentMesh: 0
+--- !u!114 &1348015152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348015147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e453c57444181843be1057be978b125, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1354515938
 GameObject:
   m_ObjectHideFlags: 0
@@ -3764,6 +3788,7 @@ GameObject:
   - component: {fileID: 1354515942}
   - component: {fileID: 1354515941}
   - component: {fileID: 1354515940}
+  - component: {fileID: 1354515943}
   m_Layer: 5
   m_Name: Menu
   m_TagString: Untagged
@@ -3833,7 +3858,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1354515941}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1354515943}
+        m_MethodName: click
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1354515941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3870,6 +3906,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1354515938}
   m_CullTransparentMesh: 0
+--- !u!114 &1354515943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1354515938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e453c57444181843be1057be978b125, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1377946998
 GameObject:
   m_ObjectHideFlags: 0
@@ -4318,7 +4366,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -43.68625, y: -70.33298}
+  m_AnchoredPosition: {x: -45.3, y: -44.230003}
   m_SizeDelta: {x: 7.613, y: 2.73}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1608406662
@@ -4899,7 +4947,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1934791075
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0ec8829501a7cf54e8b458db29d72062, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5016,7 +5064,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1934791075
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c96372977b9be144199aebd388c7f0be, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5515,7 +5563,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -30.598238, y: 0.0070190504}
+  m_AnchoredPosition: {x: -52.718, y: 1.0775}
   m_SizeDelta: {x: 7.2225, y: 2.155}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1987230325
@@ -5660,7 +5708,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1934791075
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 238e989399a4ef243827bd7718b7ba36, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5934,7 +5982,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1485312851
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 4a7299ec76df86544b2cf7c63014e4a7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -6123,7 +6171,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1934791075
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 65ca100d4add9e54aa0b072af89b3416, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
