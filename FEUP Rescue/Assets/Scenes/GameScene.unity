@@ -4159,7 +4159,7 @@ MonoBehaviour:
   initialObstaclePosition: {x: 30, y: -6, z: 0}
   initialCollectablePosition: {x: 28, y: -1, z: 0}
   spaceBetween: 5
-  spaceBetweenCollectables: 0.5
+  spaceBetweenCollectables: 1
 --- !u!114 &1285501206
 MonoBehaviour:
   m_ObjectHideFlags: 0
