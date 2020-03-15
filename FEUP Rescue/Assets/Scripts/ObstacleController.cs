@@ -151,7 +151,11 @@ public class ObstacleController : MonoBehaviour
             }
         }
 
-        if(!Thief.instance.gameObject.activeInHierarchy && Random.Range(0, 500) == 0 && this.CanAddObstacle(Thief.instance.gameObject, true)) {
+        if(!GameLogic.instance.HasGameEnded()
+            && !Thief.instance.gameObject.activeInHierarchy
+            && Random.Range(0, 500) == 0
+            && this.CanAddObstacle(Thief.instance.gameObject, true))
+        {
             Thief.instance.InitThief();
         }
     }
