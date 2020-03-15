@@ -37,7 +37,7 @@ public class ScoreManager : MonoBehaviour
         for(int i = pts.Count - 1; i >= 0; i--) {
             GameObject num = (GameObject) Instantiate(numbers[pts[i]]);
             num.SetActive(true);
-            num.transform.parent = points.transform;
+            num.transform.SetParent(points.transform);
         }
     }
 
