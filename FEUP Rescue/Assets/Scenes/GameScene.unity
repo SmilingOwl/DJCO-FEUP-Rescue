@@ -1121,15 +1121,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_JumpForce: 1200
-  m_CrouchSpeed: 0.4
   m_MovementSmoothing: 0.05
   m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2
     m_Bits: 4294967295
   m_GroundCheck: {fileID: 619997914}
-  m_CeilingCheck: {fileID: 1869761344}
-  m_CrouchDisableCollider: {fileID: 193675778}
   OnLandEvent:
     m_PersistentCalls:
       m_Calls:
@@ -1144,9 +1141,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  OnCrouchEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &193675784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1197,8 +1191,8 @@ Halo:
   m_Enabled: 0
   m_Color:
     serializedVersion: 2
-    rgba: 4287929189
-  m_Size: 5
+    rgba: 4279238400
+  m_Size: 4
 --- !u!1 &207009209
 GameObject:
   m_ObjectHideFlags: 0
@@ -4157,7 +4151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b953c9ff8a93f9947aac96feacce77df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacleAmount: 5
+  obstacleAmount: 4
   collectableAmount: 12
   obstacleVelocity: 10.3
   activeObstacles: []

@@ -29,10 +29,6 @@ public class PlayerMovement2D : MonoBehaviour
 
     void Update()
     {
-        if(GameLogic.instance.HasGameEnded()) {
-            horizontalMove = 0;
-            return;
-        }
         Vector3 screenPos = Camera.main.WorldToScreenPoint(transform.position);
         if(screenPos.x < 0 && !GameLogic.instance.HasGameEnded()) {
             GameLogic.instance.GameOver("You lost the thieves!");
