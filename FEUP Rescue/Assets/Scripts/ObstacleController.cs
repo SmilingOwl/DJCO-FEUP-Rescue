@@ -106,14 +106,14 @@ public class ObstacleController : MonoBehaviour
         }
 
         for(int i = 0; i < activeObstacles.Count; i++) {
-            if(activeObstacles[i].tag == "Trap" || activeObstacles[i].tag == "Dustbin"){
+            if(activeObstacles[i].tag == "Trap"){
                 float obstacleInitPosition = - activeObstacles[i].GetComponent<SpriteRenderer>().bounds.size.x / 2.0f
                     + activeObstacles[i].transform.position.x;
                 float obstaclePosition = activeObstacles[i].GetComponent<SpriteRenderer>().bounds.size.x / 2.0f
                     + activeObstacles[i].transform.position.x;
                 float currentFinPosition = initialCollectablePosition.x + collectable.GetComponent<SpriteRenderer>().bounds.size.x / 2.0f;
                 if(!(currentFinPosition < obstacleInitPosition - 2f || currentPosition > obstaclePosition + 2f)) {
-                    return 3.3f;
+                        return 5f;
                 }
             }
         }
@@ -121,12 +121,12 @@ public class ObstacleController : MonoBehaviour
         float thiefPos = Thief.instance.GetComponent<SpriteRenderer>().bounds.size.x / 2.0f
             + Thief.instance.transform.position.x;
         if(currentPosition - thiefPos <= spaceBetween) {
-            return 3.3f;
+            return 5f;
         }
 
         float ypos = initialCollectablePosition.y;
         if(Random.Range(0, 3) == 0) {
-            ypos = 3.3f;
+            ypos = 5f;
         }
 
         return ypos;

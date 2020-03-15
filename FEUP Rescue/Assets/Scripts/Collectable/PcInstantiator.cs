@@ -39,7 +39,7 @@ public class PcInstantiator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (activePc < ObjectPool.instance.pcAmount && Random.Range(0, 50) == 0)
+        if (activePc < ObjectPool.instance.pcAmount && Random.Range(0, 10) == 0)
         {
             this.AddPc();
         }

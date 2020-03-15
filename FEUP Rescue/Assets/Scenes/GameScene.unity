@@ -4163,7 +4163,7 @@ MonoBehaviour:
   activeObstacles: []
   activeCollectables: []
   initialObstaclePosition: {x: 30, y: -6, z: 0}
-  initialCollectablePosition: {x: 28, y: -2.5, z: 0}
+  initialCollectablePosition: {x: 28, y: -1, z: 0}
   spaceBetween: 5
   spaceBetweenCollectables: 0.5
 --- !u!114 &1285501206
