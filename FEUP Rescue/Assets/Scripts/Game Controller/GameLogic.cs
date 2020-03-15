@@ -96,6 +96,8 @@ public class GameLogic : MonoBehaviour
     }
 
     public void IncrementPoints() {
+        if(HasGameEnded())
+            return;
         points++;
         ScoreManager.scoreManager.UpdateScore(points);
     }
@@ -134,18 +136,18 @@ public class GameLogic : MonoBehaviour
         GameOverMenu.SetActive(true);
     }
 
-    public void GetScore() {
+    public int GetScore() {
         int bomb = 0;
         if(caughtBomb)
             bomb = 10;
         
-        score.text = "" + (points + bomb + Timer.instance.GetTimerPoints());
+        return (points + bomb + Timer.instance.GetTimerPoints());
     }
 
     public void GameWon() {
         gameWon = true;
         Debug.Log("You win!");
-        this.GetScore();
+        ScoreManager.scoreManager.ShowPoints(GetScore());
         VictoryMenu.SetActive(true);
     }
 
