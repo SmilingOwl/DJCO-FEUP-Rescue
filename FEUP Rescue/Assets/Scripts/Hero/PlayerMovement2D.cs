@@ -89,15 +89,6 @@ public class PlayerMovement2D : MonoBehaviour
         }
     }
 
-    public void SetSpeeding(bool speeding) {
-        if(speeding) {
-            halo.enabled = true;
-        } else {
-            halo.enabled = false;
-        }
-    }
-
-
     public void OnLanding()
     {
         animator.SetBool("isJumping", false);
