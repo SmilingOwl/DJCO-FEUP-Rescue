@@ -90,7 +90,7 @@ public class Thief : MonoBehaviour
     }
 
     void OnBecameInvisible() {
-        if(!dead) {
+        if(!dead && !GameLogic.instance.HasGameEnded()) {
             GameLogic.instance.GameOver("You let a thief escape");
             return;
         }
