@@ -132,7 +132,7 @@ public class GameLogic : MonoBehaviour
 
     public void GameOver(string reason) {
         gameOverbool = true;
-        Debug.Log("Game Over! " + reason);
+        Timer.instance.StopTimer();
         GameOverMenu.SetActive(true);
     }
 
@@ -146,7 +146,7 @@ public class GameLogic : MonoBehaviour
 
     public void GameWon() {
         gameWon = true;
-        Debug.Log("You win!");
+        Timer.instance.StopTimer();
         ScoreManager.scoreManager.ShowPoints(GetScore());
         VictoryMenu.SetActive(true);
     }

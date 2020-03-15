@@ -33,7 +33,7 @@ public class BenchInstantiator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(activeBenches < ObjectPool.instance.benchAmount && Random.Range(0, 100) == 0) {
+        if(activeBenches < ObjectPool.instance.benchAmount && Random.Range(0, 50) == 0) {
             this.AddBench();
         }
     }

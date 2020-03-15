@@ -41,7 +41,7 @@ public class Timer : MonoBehaviour
         text.text = minutes_to_write + ":" + seconds_to_write;
     }
 
-    void StopTimer() {
+    public void StopTimer() {
         stop = true;
     }
 
