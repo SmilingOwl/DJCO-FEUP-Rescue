@@ -1320,7 +1320,79 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mixerGroup: {fileID: 0}
-  sounds: []
+  sounds:
+  - name: explosion
+    clip: {fileID: 8300000, guid: 0588c2221a2bf014793355cc3e6b182c, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 0
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: heroAttack
+    clip: {fileID: 8300000, guid: 2d422ad7eed775e4c9b1b2bafa8a9dd1, type: 3}
+    volume: 0
+    volumeVariance: 0
+    pitch: 0
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: heroJump
+    clip: {fileID: 8300000, guid: 9bdbbcdd5c1916441b5175c99003bf2b, type: 3}
+    volume: 0
+    volumeVariance: 0
+    pitch: 0
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: gainLife
+    clip: {fileID: 8300000, guid: 571a4cea09c1cdf47b599ef134dfa365, type: 3}
+    volume: 0
+    volumeVariance: 0
+    pitch: 0
+    pitchVariance: 0
+    loop: 1
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: collectPcs
+    clip: {fileID: 8300000, guid: 78db48ecdd37ec549b47af40ce20d487, type: 3}
+    volume: 0
+    volumeVariance: 0
+    pitch: 0
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: powerUp
+    clip: {fileID: 8300000, guid: c5fc9e6b53a17044285d550f53abef9d, type: 3}
+    volume: 0
+    volumeVariance: 0
+    pitch: 0
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: star
+    clip: {fileID: 8300000, guid: ec9396610f86aed41ad314e2b5b7f09e, type: 3}
+    volume: 0
+    volumeVariance: 0
+    pitch: 0
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: thiefAttack
+    clip: {fileID: 8300000, guid: aac2a8f3cb1800440be32572333965ff, type: 3}
+    volume: 0
+    volumeVariance: 0
+    pitch: 0
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
 --- !u!4 &205955284
 Transform:
   m_ObjectHideFlags: 0
