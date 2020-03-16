@@ -1350,11 +1350,11 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: gainLife
     clip: {fileID: 8300000, guid: 571a4cea09c1cdf47b599ef134dfa365, type: 3}
-    volume: 0
+    volume: 1
     volumeVariance: 0
-    pitch: 0
+    pitch: 2
     pitchVariance: 0
-    loop: 1
+    loop: 0
     mixerGroup: {fileID: 0}
     source: {fileID: 0}
   - name: collectPcs
