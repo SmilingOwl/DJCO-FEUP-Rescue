@@ -1332,9 +1332,9 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: heroAttack
     clip: {fileID: 8300000, guid: 2d422ad7eed775e4c9b1b2bafa8a9dd1, type: 3}
-    volume: 0
+    volume: 1
     volumeVariance: 0
-    pitch: 0
+    pitch: 1
     pitchVariance: 0
     loop: 0
     mixerGroup: {fileID: 0}

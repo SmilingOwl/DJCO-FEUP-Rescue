@@ -67,6 +67,7 @@ public class PlayerMovement2D : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 Attack();
+                 FindObjectOfType<AudioManager>().Play("heroAttack");
                 nextAttackTime = Time.time + 1f / attackRate;
             }
         }
