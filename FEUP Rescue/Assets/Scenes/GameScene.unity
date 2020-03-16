@@ -1393,6 +1393,15 @@ MonoBehaviour:
     loop: 0
     mixerGroup: {fileID: 0}
     source: {fileID: 0}
+  - name: heroHurt
+    clip: {fileID: 8300000, guid: 94ca120dd81fd8241b39c5442c372819, type: 3}
+    volume: 0
+    volumeVariance: 0
+    pitch: 0
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
 --- !u!4 &205955284
 Transform:
   m_ObjectHideFlags: 0
