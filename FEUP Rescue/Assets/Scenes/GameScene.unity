@@ -1368,9 +1368,9 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: powerUp
     clip: {fileID: 8300000, guid: c5fc9e6b53a17044285d550f53abef9d, type: 3}
-    volume: 0
+    volume: 1
     volumeVariance: 0
-    pitch: 0
+    pitch: 2
     pitchVariance: 0
     loop: 0
     mixerGroup: {fileID: 0}
