@@ -27,6 +27,7 @@ public class ThiefRun : StateMachineBehaviour
         if(!thief.dead && Vector2.Distance(player.position, rb.position) <= attackRange && !GameLogic.instance.HasGameEnded())
         {
             animator.SetTrigger("Attack");
+             FindObjectOfType<AudioManager>().Play("thiefAttack");
         }
         
     }

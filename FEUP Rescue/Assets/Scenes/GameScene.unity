@@ -1386,9 +1386,9 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: thiefAttack
     clip: {fileID: 8300000, guid: aac2a8f3cb1800440be32572333965ff, type: 3}
-    volume: 0
+    volume: 1
     volumeVariance: 0
-    pitch: 0
+    pitch: 1
     pitchVariance: 0
     loop: 0
     mixerGroup: {fileID: 0}
