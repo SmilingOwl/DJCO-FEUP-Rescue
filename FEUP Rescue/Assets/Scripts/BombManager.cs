@@ -29,6 +29,7 @@ public class BombManager : MonoBehaviour
             bomb.SetActive(false);
             isBombActive = false;
             BombAttack.instance.Attack();
+             FindObjectOfType<AudioManager>().Play("explosion");
         }
     }
 }

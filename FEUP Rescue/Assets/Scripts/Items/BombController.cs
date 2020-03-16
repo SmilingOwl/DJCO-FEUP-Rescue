@@ -25,6 +25,7 @@ public class BombController : MonoBehaviour
     {
         if (collider.gameObject.tag == "Hero")
         {
+             FindObjectOfType<AudioManager>().Play("powerUp");
             gameObject.SetActive(false);
             BombInstantiator.instance.RemoveBomb(gameObject);
             BombManager.instance.ActivateBomb();

@@ -1322,10 +1322,10 @@ MonoBehaviour:
   mixerGroup: {fileID: 0}
   sounds:
   - name: explosion
-    clip: {fileID: 8300000, guid: 0588c2221a2bf014793355cc3e6b182c, type: 3}
+    clip: {fileID: 8300000, guid: f340f742725ed0642a14191693dec572, type: 3}
     volume: 1
     volumeVariance: 0
-    pitch: 0
+    pitch: 1
     pitchVariance: 0
     loop: 0
     mixerGroup: {fileID: 0}
