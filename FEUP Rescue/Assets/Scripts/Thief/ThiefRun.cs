@@ -24,7 +24,7 @@ public class ThiefRun : StateMachineBehaviour
     {
         thief.LookAtPlayer();
 
-        if(!thief.dead && Vector2.Distance(player.position, rb.position) <= attackRange)
+        if(!thief.dead && Vector2.Distance(player.position, rb.position) <= attackRange && !GameLogic.instance.HasGameEnded())
         {
             animator.SetTrigger("Attack");
         }
