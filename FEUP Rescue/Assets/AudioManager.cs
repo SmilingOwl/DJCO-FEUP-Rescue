@@ -10,6 +10,10 @@ public class AudioManager : MonoBehaviour
 
 	public Sound[] sounds;
 
+	void Start()
+    {
+		Play("theme");
+    }
 	void Awake()
 	{
 		if (instance != null)

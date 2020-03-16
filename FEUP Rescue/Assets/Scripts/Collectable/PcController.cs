@@ -4,18 +4,6 @@ using UnityEngine;
 
 public class PcController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-    
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-     
-    }
-
     void OnBecameInvisible()
     {
         gameObject.SetActive(false);
@@ -24,6 +12,7 @@ public class PcController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider) {
          if(collider.gameObject.tag == "Hero") {
+            FindObjectOfType<AudioManager>().Play("collectPcs");
             gameObject.SetActive(false);
             PcInstantiator.instance.RemovePc(gameObject);
             GameLogic.instance.IncrementPoints();

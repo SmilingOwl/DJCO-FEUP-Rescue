@@ -1359,10 +1359,10 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: collectPcs
     clip: {fileID: 8300000, guid: 78db48ecdd37ec549b47af40ce20d487, type: 3}
-    volume: 0
-    volumeVariance: 0
-    pitch: 0
-    pitchVariance: 0
+    volume: 1
+    volumeVariance: 0.505
+    pitch: 2
+    pitchVariance: 0.458
     loop: 0
     mixerGroup: {fileID: 0}
     source: {fileID: 0}
@@ -1400,6 +1400,15 @@ MonoBehaviour:
     pitch: 0
     pitchVariance: 0
     loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: theme
+    clip: {fileID: 8300000, guid: df724a0c4f3e7a54787f4bf33bc92ff5, type: 3}
+    volume: 0.299
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 1
     mixerGroup: {fileID: 0}
     source: {fileID: 0}
 --- !u!4 &205955284
