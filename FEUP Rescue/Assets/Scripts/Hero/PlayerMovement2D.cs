@@ -57,6 +57,8 @@ public class PlayerMovement2D : MonoBehaviour
         {
             jump = true;
             animator.SetBool("isJumping", true);
+            FindObjectOfType<AudioManager>().Play("heroJump");
+            
         }
 
         //ATTACK

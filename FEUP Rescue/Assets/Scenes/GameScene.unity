@@ -1341,9 +1341,9 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: heroJump
     clip: {fileID: 8300000, guid: 9bdbbcdd5c1916441b5175c99003bf2b, type: 3}
-    volume: 0
+    volume: 1
     volumeVariance: 0
-    pitch: 0
+    pitch: 1
     pitchVariance: 0
     loop: 0
     mixerGroup: {fileID: 0}
@@ -1395,9 +1395,9 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: heroHurt
     clip: {fileID: 8300000, guid: 94ca120dd81fd8241b39c5442c372819, type: 3}
-    volume: 0
+    volume: 0.608
     volumeVariance: 0
-    pitch: 0
+    pitch: 1
     pitchVariance: 0
     loop: 0
     mixerGroup: {fileID: 0}

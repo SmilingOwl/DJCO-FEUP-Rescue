@@ -33,6 +33,7 @@ public class PlayerHealth : MonoBehaviour
                 currentHealth -= damage;
                 healthBar.SetHealth(currentHealth);
                 animator.SetTrigger("Hurt");
+                FindObjectOfType<AudioManager>().Play("heroHurt");
 
                 if (currentHealth <= 0)
                 {
