@@ -12,11 +12,13 @@ public class MainMenu : MonoBehaviour
     
     public void QuitGame()
     {
+        GameLogic.instance.SetGameOver();
         Application.Quit();
     }
 
     public void click()
     {
+        GameLogic.instance.SetGameOver();
         SceneManager.LoadScene("Menu");
     }
 }

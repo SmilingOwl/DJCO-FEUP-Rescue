@@ -15,24 +15,21 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Entrou");
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (GameIsPaused)
             {
-                Debug.Log("Carregou R");
                 Resume();
             }
             else
             {
-                Debug.Log("Carregou P");
                 Pause();
             }
         }
         
     }
 
-    void Resume()
+    public void Resume()
     {
         PauseMenuUI.SetActive(false);
         Time.timeScale = 1f;

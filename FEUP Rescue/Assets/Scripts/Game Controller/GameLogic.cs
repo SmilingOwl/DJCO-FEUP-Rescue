@@ -50,6 +50,7 @@ public class GameLogic : MonoBehaviour
         deltaTimeOut = 0f;
         GameIsPaused = false;
         caughtBomb = false;
+        Time.timeScale = 1f;
     }
 
     // Update is called once per frame
@@ -59,12 +60,10 @@ public class GameLogic : MonoBehaviour
         {
             if (GameIsPaused)
             {
-                Debug.Log("Carregou R");
                 Resume();
             }
             else
             {
-                Debug.Log("Carregou P");
                 Pause();
             }
         }
@@ -147,6 +146,10 @@ public class GameLogic : MonoBehaviour
         Timer.instance.StopTimer();
         ScoreManager.scoreManager.ShowPoints(GetScore());
         VictoryMenu.SetActive(true);
+    }
+
+    public void SetGameOver() {
+        gameOverbool = true;
     }
 
     public bool HasGameEnded() {

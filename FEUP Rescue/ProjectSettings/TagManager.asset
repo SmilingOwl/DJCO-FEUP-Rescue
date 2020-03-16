@@ -58,9 +58,6 @@ TagManager:
   - name: Foreground
     uniqueID: 3685523859
     locked: 0
-  - name: UI
-    uniqueID: 2653786529
-    locked: 0
   - name: Obstacles
     uniqueID: 1934791075
     locked: 0
@@ -75,4 +72,7 @@ TagManager:
     locked: 0
   - name: Attack
     uniqueID: 2809654445
+    locked: 0
+  - name: UI
+    uniqueID: 2653786529
     locked: 0
