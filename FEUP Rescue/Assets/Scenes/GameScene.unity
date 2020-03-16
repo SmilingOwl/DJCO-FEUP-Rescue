@@ -1411,6 +1411,15 @@ MonoBehaviour:
     loop: 1
     mixerGroup: {fileID: 0}
     source: {fileID: 0}
+  - name: GameOver
+    clip: {fileID: 8300000, guid: 610cffba781debe4d92cfd7ca1136e1f, type: 3}
+    volume: 1
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 1
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
 --- !u!4 &205955284
 Transform:
   m_ObjectHideFlags: 0

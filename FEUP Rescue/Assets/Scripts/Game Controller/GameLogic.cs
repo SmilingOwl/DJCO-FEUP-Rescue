@@ -25,17 +25,6 @@ public class GameLogic : MonoBehaviour
     public bool gameWon;
     bool caughtBomb;
     public TextMeshProUGUI score;
-    
-
-    void Awake() {
-        instance = this;
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        Init();
-    }
 
     void Init()
     {
@@ -130,6 +119,7 @@ public class GameLogic : MonoBehaviour
     public void GameOver(string reason) {
         gameOverbool = true;
         Timer.instance.StopTimer();
+        FindObjectOfType<AudioManager>().Play("GameOver");
         GameOverMenu.SetActive(true);
     }
 
