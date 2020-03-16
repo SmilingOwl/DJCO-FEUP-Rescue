@@ -1377,9 +1377,9 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: star
     clip: {fileID: 8300000, guid: ec9396610f86aed41ad314e2b5b7f09e, type: 3}
-    volume: 0
+    volume: 1
     volumeVariance: 0
-    pitch: 0
+    pitch: 1
     pitchVariance: 0
     loop: 0
     mixerGroup: {fileID: 0}

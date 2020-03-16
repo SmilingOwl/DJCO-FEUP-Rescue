@@ -61,6 +61,7 @@ public class Thief : MonoBehaviour
         GetComponent<Collider2D>().enabled = false;
         dead = true;
         StarManager.instance.FillStar();
+         FindObjectOfType<AudioManager>().Play("star");
     }
 
 
