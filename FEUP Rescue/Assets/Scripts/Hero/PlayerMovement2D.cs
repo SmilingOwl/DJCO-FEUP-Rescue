@@ -45,18 +45,22 @@ public class PlayerMovement2D : MonoBehaviour
         } else {
             horizontalMove *= runSpeedAux;
         }
+        if(GameLogic.instance.HasGameEnded())
+        {
+            horizontalMove = 0;
+        }
         
         animator.SetFloat("speed", Mathf.Abs(horizontalMove));
 
         //JUMP
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && !GameLogic.instance.HasGameEnded())
         {
             jump = true;
             animator.SetBool("isJumping", true);
         }
 
         //ATTACK
-        if (Time.time >= nextAttackTime)
+        if (Time.time >= nextAttackTime && !GameLogic.instance.HasGameEnded())
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
