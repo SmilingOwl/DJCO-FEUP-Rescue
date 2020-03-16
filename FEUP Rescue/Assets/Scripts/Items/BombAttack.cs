@@ -17,10 +17,7 @@ public class BombAttack : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collider)
     {
-        if (collider.gameObject.tag == "Thief")
-        {
-            gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
-            gameObject.GetComponent<Animator>().SetTrigger("Explode");
-        }
+        gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+        gameObject.GetComponent<Animator>().SetTrigger("Explode");
     }
 }
