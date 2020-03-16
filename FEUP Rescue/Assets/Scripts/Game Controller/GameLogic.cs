@@ -26,6 +26,16 @@ public class GameLogic : MonoBehaviour
     bool caughtBomb;
     public TextMeshProUGUI score;
 
+    void Awake() {
+        instance = this;
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        Init();
+    }
+
     void Init()
     {
         gameOverbool = false;
