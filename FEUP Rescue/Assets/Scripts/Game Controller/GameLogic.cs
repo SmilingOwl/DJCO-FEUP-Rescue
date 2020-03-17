@@ -145,6 +145,7 @@ public class GameLogic : MonoBehaviour
         gameWon = true;
         Timer.instance.StopTimer();
         ScoreManager.scoreManager.ShowPoints(GetScore());
+        FindObjectOfType<AudioManager>().Play("Victory");
         VictoryMenu.SetActive(true);
     }
 
