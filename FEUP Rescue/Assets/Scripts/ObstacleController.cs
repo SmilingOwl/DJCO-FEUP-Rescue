@@ -153,7 +153,7 @@ public class ObstacleController : MonoBehaviour
 
         if(!GameLogic.instance.HasGameEnded()
             && !Thief.instance.gameObject.activeInHierarchy
-            && Random.Range(0, 300) == 0
+            && Random.Range(0, 250) == 0
             && this.CanAddObstacle(Thief.instance.gameObject, true))
         {
             Thief.instance.InitThief();
