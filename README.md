@@ -2,7 +2,7 @@
 
 Project for the Computer Games Development (DJCO) class of the Master in Informatics and Computer Engineering (MIEIC) at the Faculty of Engineering of the University of Porto (FEUP).
 
-- [Game Concept](#game-concept)
+- [Game Concept](#1.-game-concept)
 - [Playing Instructions](#playing-instructions)
 - [Screenshots](#screenshots)
 - [Development Environment and Installation](#development-environment-and-installation)
