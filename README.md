@@ -3,10 +3,10 @@
 Project for the Computer Games Development (DJCO) class of the Master in Informatics and Computer Engineering (MIEIC) at the Faculty of Engineering of the University of Porto (FEUP).
 
 - [Game Concept](#1.-game-concept)
-- [Playing Instructions](#playing-instructions)
-- [Screenshots](#screenshots)
-- [Development Environment and Installation](#development-environment-and-installation)
-- [Promotional Video](#promotional-video)
+- [Playing Instructions](#2.-playing-instructions)
+- [Screenshots](#3.-screenshots)
+- [Development Environment and Installation](#4.-development-environment-and-installation)
+- [Promotional Video](#5.-promotional-video)
 
 
 Game developed by [Helena Montenegro](https://github.com/helenaMontenegro) and [Juliana Marques](https://github.com/SmilingOwl).
