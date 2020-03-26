@@ -2,16 +2,17 @@
 
 Project for the Computer Games Development (DJCO) class of the Master in Informatics and Computer Engineering (MIEIC) at the Faculty of Engineering of the University of Porto (FEUP).
 
-- [Game Concept](#1.-game-concept)
-- [Playing Instructions](#2.-playing-instructions)
-- [Screenshots](#3.-screenshots)
-- [Development Environment and Installation](#4.-development-environment-and-installation)
-- [Promotional Video](#5.-promotional-video)
+- [Game Concept](#game-concept)
+- [Playing Instructions](#playing-instructions)
+- [Screenshots](#screenshots)
+- [Development Environment and Installation](#development-environment-and-installation)
+- [Promotional Video](#promotional-video)
 
 
 Game developed by [Helena Montenegro](https://github.com/helenaMontenegro) and [Juliana Marques](https://github.com/SmilingOwl).
+<br><br>
 
-## 1. Game Concept 
+## 1. Game Concept <a name="game-concept"></a>
 
 FEUP Rescue is a 2D horizontal side-scrolling game developed in Unity.
 The game is set at FEUP, where a group of 5 thieves is stealing computers. The goal is to defeat all the thieves while recovering the stolen computers. During the gameplay, the player will come across various obstacles, some of which might hurt him, and power-ups found at FEUP to help him win.
@@ -20,9 +21,9 @@ The game is set at FEUP, where a group of 5 thieves is stealing computers. The g
 ### 1.1. Premise 
 
 ***“Oh no! FEUP is being assaulted by thieves. They are taking all the computers! You are the only one who can stop them! Run through FEUP and defeat all the five thieves, while retrieving the stolen computers and avoiding the obstacles you’ll find in the way. But be careful, the thieves have dropped spikes on the floor to hurt you!”***
+<br><br>
 
-
-## 2. Playing Instructions
+## 2. Playing Instructions <a name="playing-instructions"></a>
 ### 2.1. Player Movement
 
 The player moves with the arrows in the keyboard or with A and D keys. He can move to the right and to the left, as well as jump using the up arrow or W key. The player can also attack by using the space key.
@@ -66,20 +67,22 @@ The player **loses** if:
 ### 2.7. Pause Menu
 
 The player can pause the game by clicking ESC. To restart the game, the player can either click on ESC again, or use the mouse to click on the Restart button on the Pause Menu.
+<br><br>
 
-## 3. Screenshoots
+## 3. Screenshots <a name="screenshots"></a>
 <img src="https://github.com/helenaMontenegro/DJCO-FEUP-Rescue/blob/master/FEUP%20Rescue/Screenshots/mainMenu.PNG" width="800"><br><br>
 <img src="https://github.com/helenaMontenegro/DJCO-FEUP-Rescue/blob/master/FEUP%20Rescue/Screenshots/print1.png" width="800"><br><br>
 <img src="https://github.com/helenaMontenegro/DJCO-FEUP-Rescue/blob/master/FEUP%20Rescue/Screenshots/print3.png" width="800"><br><br>
 
-## 4. Development Environment and Installation
+## 4. Development Environment and Installation <a name="development-environment-and-installation"></a>
 
 The game was developed using Unity 2D, with version: 2019.3.2f1
 
 To play the game, simply run the file “FEUP Rescue.exe”.
 
 **Happy gamming and turn on the sound!!**
+<br><br>
 
-## 5. Promotional Video
+## 5. Promotional Video <a name="promotional-video"></a>
 
 [Video](https://www.youtube.com/watch?v=whh4L6wxcsk)
